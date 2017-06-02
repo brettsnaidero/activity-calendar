@@ -1,6 +1,6 @@
 @import '_reset';
 
-$header-height: 100px;
+$header-height: 80px;
 $sidebar-width: 320px;
 
 /* Components */
@@ -9,6 +9,7 @@ $sidebar-width: 320px;
 
 @import 'components/_sidebar';
 @import 'components/_header';
+@import 'components/_offcanvas';
 
 /* Elements */
 @import 'elements/_button';

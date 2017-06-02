@@ -14,8 +14,7 @@ export default class Calendar extends Component {
     this.state = {
       testData: [
         {
-          'title': 'All Day Event',
-          'allDay': true,
+          'title': 'An Event',
           'start': new Date(2017, 6, 2, 6, 0, 0),
           'end': new Date(2017, 6, 2, 18, 0, 0)
         },

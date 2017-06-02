@@ -14,6 +14,7 @@ import MyEvents from './components/MyEvents';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import NavigationBar from './components/NavigationBar';
+import OffCanvas from './components/OffCanvas';
 
 import './sass/style.css';
 
@@ -23,46 +24,53 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
 
-          {/* Header */}
-          <Header />
+          <OffCanvas />
 
-          {/* Left Sidebar Area */}
-          <Sidebar />
+          {/* Site Overlay for Off Canvas */}
+          <div className="site-overlay"></div>
 
-          {/* Main Content Area */}
-          <div className="main">
-            <div className="main--area">
-              <NavigationBar
-                config="calendar"
-              />
+          <div id="container">
+            {/* Header */}
+            <Header />
 
-              <CSSTransitionGroup
-                transitionName="fade"
-                transitionEnterTimeout={300}
-                transitionLeaveTimeout={300}
-              >
-                <Switch>
-                  <Route
-          	    		path="/map"
-          	    		component={Map}
-          	    	/>
-                  <Route
-                    path="/schedule"
-                    component={ScheduleAnEvent}
-                  />
-                  <Route
-                    path="/myevents"
-                    component={MyEvents}
-                  />
-                  <Route
-                    path="/"
-                    component={Calendar}
-                  />
-                </Switch>
-              </CSSTransitionGroup>
+            {/* Left Sidebar Area */}
+            <Sidebar />
+
+            {/* Main Content Area */}
+            <div className="main">
+              <div className="main--area">
+                <NavigationBar
+                  config="calendar"
+                />
+
+                <CSSTransitionGroup
+                  transitionName="fade"
+                  transitionEnterTimeout={300}
+                  transitionLeaveTimeout={300}
+                >
+                  <Switch>
+                    <Route
+            	    		path="/map"
+            	    		component={Map}
+            	    	/>
+                    <Route
+                      path="/schedule"
+                      component={ScheduleAnEvent}
+                    />
+                    <Route
+                      path="/myevents"
+                      component={MyEvents}
+                    />
+                    <Route
+                      path="/"
+                      component={Calendar}
+                    />
+                  </Switch>
+                </CSSTransitionGroup>
+              </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </BrowserRouter>
     );

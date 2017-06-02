@@ -11,21 +11,32 @@
 }
 
 /* Logo */
-.App-logo {
+.header--logo {
   width: 20%;
   width: calc(#{$sidebar-width});
-  padding: 20px;
-  padding: 1.25rem;
+  padding: 10px;
+  padding: 0.75rem;
   background-color: #3a4168;
 }
 
-.App-logo img {
+.header--logo img {
   display: block;
-  max-height: 60px;
+  max-height: $header-height - 20px;
   margin: 0 auto;
 }
 
-/* Hamburger Menu Toggle */
+.header--controls {
+  @supports (display: flex) {
+    margin-left: auto;
+  }
+}
 
+/* Hamburger Menu Toggle */
+.menu-btn {
+  width: $header-height;
+  height: $header-height;
+  border: none;
+  background: #3a4168;
+}
 
 /* User Dropdown */
