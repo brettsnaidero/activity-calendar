@@ -1,0 +1,15 @@
+.navigation-bar {
+  height: $header-height;
+  background-color: #EFEFEF;
+}
+
+.navigation-bar a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  padding: 0.75rem;
+}
+
+.navigation-bar a.active {
+  color: blue;
+}

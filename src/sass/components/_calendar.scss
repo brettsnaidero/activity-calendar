@@ -1,0 +1,99 @@
+@import './calendar/calendar-variables';
+
+.rbc-btn {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button.rbc-btn {
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled].rbc-btn {
+  cursor: not-allowed;
+}
+
+button.rbc-input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* Calendar */
+
+.rbc-calendar {
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.rbc-calendar *,
+.rbc-calendar *:before,
+.rbc-calendar *:after {
+  box-sizing: inherit;
+}
+
+.rbc-abs-full {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.rbc-ellipsis {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rbc-rtl {
+  direction: rtl;
+}
+
+.rbc-off-range {
+  color: $out-of-range-color;
+}
+
+.rbc-header {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 3px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 90%;
+  min-height: 0;
+
+  > a {
+    &, &:active, &:visited {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
+.rbc-row-content {
+  position: relative;
+  user-select: none;
+  z-index: 4;
+}
+
+.rbc-today {
+  background-color: $today-highlight-bg;
+}
+
+@import './calendar/_toolbar';
+@import './calendar/_event';
+@import './calendar/_month';
+@import './calendar/_agenda';
+@import './calendar/_time-column';
+@import './calendar/_time-grid';

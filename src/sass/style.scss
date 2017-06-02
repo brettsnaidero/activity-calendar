@@ -1,0 +1,49 @@
+@import '_reset';
+
+$header-height: 100px;
+$sidebar-width: 320px;
+
+/* Components */
+@import 'components/_calendar';
+@import 'components/_map';
+
+@import 'components/_sidebar';
+@import 'components/_header';
+
+/* Elements */
+@import 'elements/_button';
+@import 'elements/_navigation-bar';
+@import 'elements/_form';
+
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+/* Main */
+.main {
+  height: 100vh;
+  height: calc(100vh - #{$header-height});
+  width: 80%;
+  width: calc(100% - #{$sidebar-width});
+  float: left;
+  overflow-y: scroll;
+}
+
+.main--area {
+  padding: 20px 40px;
+  padding: 1.25rem 2.5rem;
+  width: 100%;
+}

@@ -1,0 +1,31 @@
+.header {
+  position: relative;
+  background-color: #282c42;
+  height: $header-height;
+  color: white;
+  width: 100%;
+
+  @supports (display: flex) {
+    display: flex;
+  }
+}
+
+/* Logo */
+.App-logo {
+  width: 20%;
+  width: calc(#{$sidebar-width});
+  padding: 20px;
+  padding: 1.25rem;
+  background-color: #3a4168;
+}
+
+.App-logo img {
+  display: block;
+  max-height: 60px;
+  margin: 0 auto;
+}
+
+/* Hamburger Menu Toggle */
+
+
+/* User Dropdown */

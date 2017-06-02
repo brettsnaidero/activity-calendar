@@ -1,0 +1,128 @@
+label {
+  color: currentColor;
+  display: block;
+  cursor: pointer;
+}
+
+ul.optionset li {
+  list-style: none;
+	padding: 8px 0px;
+	padding: 0.5rem 0rem;
+  position: relative;
+}
+
+.field.checkbox {
+  position: relative;
+}
+
+ul label,
+.contact-options label,
+.field.checkbox label {
+	float: none;
+	text-align: left;
+	padding: 0 0 0 36px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  opacity: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  vertical-align: middle;
+  z-index: 100;
+  width: 26px;
+  height: 26px;
+  top: 50%;
+  left: 0;
+  margin-top: -13px;
+  position: absolute;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Fake Box */
+.radio-field label::before,
+.checkbox-field label::before,
+.field.checkbox label::before,
+ul.optionset li label::before,
+input[type="radio"],
+input[type="checkbox"] {
+  width: 26px;
+  height: 26px;
+  top: 50%;
+  left: 0;
+  margin-top: -13px;
+  position: absolute;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.radio-field label::before,
+.checkbox-field label::before,
+.field.checkbox label::before,
+ul.optionset li label::before {
+  content: '';
+  background: #FFF;
+  border: 2px solid #052a4e;
+  transition: opacity 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  border-radius: 50%;
+}
+
+.field.checkbox label::before,
+ul.optionset.checkboxset li label::before {
+  border-radius: 3px;
+}
+
+/* Tick or Marker */
+input[type="checkbox"] + label svg,
+input[type="radio"] + label svg {
+  width: 22px;
+  height: 22px;
+  top: 50%;
+  left: 2px;
+  margin-top: -11px;
+  position: absolute;
+  cursor: pointer;
+}
+
+input[type="checkbox"] + label svg {
+  fill: none;
+  stroke: #052a4e;
+  stroke-width: 1.5px;
+  stroke-dasharray: 10.746636390686035px;
+  stroke-dashoffset: 10.746636390686035px;
+  transition: 0.5s stroke-dashoffset ease;
+}
+
+input[type="radio"] + label svg {
+  fill: #052a4e;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: 0.5s transform ease, 0.5s opacity ease;
+}
+
+input[type="checkbox"]:focus + label::before,
+input[type="radio"]:focus + label::before,
+input[type="checkbox"]:hover + label::before,
+input[type="radio"]:hover + label::before {
+  border-color: #29aae1;
+  box-shadow: 0px 0px 3px rgba(#29aae1,0.5);
+  background-color: rgba(255,255,255,0.15);
+}
+
+input[type="checkbox"]:checked + label::before,
+input[type="radio"]:checked + label::before {
+  border-color: #2ec72e;
+}
+
+input[type="checkbox"]:checked + label svg {
+  stroke-dashoffset: 0px;
+}
+
+input[type="radio"]:checked + label svg {
+  transform: scale(1);
+  opacity: 1;
+}
