@@ -1,58 +1,60 @@
 
-$active-background: darken($btn-bg, 10%);
+$active-background: #0074cd;
 $active-border: darken($btn-border, 12%);
 
 .rbc-toolbar {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  font-size: 16px;
 
   .rbc-toolbar-label {
     width: 100%;
     padding: 0 10px;
     text-align: center;
+    font-weight: bold;
   }
 
   & button {
     color: $btn-color;
     display: inline-block;
     margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     text-align: center;
     vertical-align: middle;
-    background: none;
+    background: rgba(71, 128, 168, 0.1);
+    border: none;
     background-image: none;
-    border: 1px solid $btn-border;
     padding: .375rem 1rem;
-    border-radius: 4px;
+    border-radius: 10px;
     line-height: normal;
     white-space: nowrap;
+    cursor: pointer;
+    font-size: 12px;
+    font-size: 0.75rem;
 
     &:active,
     &.rbc-active {
       background-image: none;
-      box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
       background-color: $active-background;
-      border-color: $active-border;
+      color: #FFF;
 
       &:hover,
       &:focus {
-        color: $btn-color;
-        background-color: darken($btn-bg, 17%);
-        border-color: darken($btn-border, 25%);
+        background-color: $active-background;
+        color: #FFF;
       }
     }
 
     &:focus {
-      color: $btn-color;
       background-color: $active-background;
-      border-color: $active-border;
+      color: #FFF;
     }
 
     &:hover {
-      color: $btn-color;
       background-color: $active-background;
-          border-color: $active-border;
+      color: #FFF;
     }
   }
 }

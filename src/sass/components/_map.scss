@@ -1,3 +1,35 @@
 .map {
   height: calc(100vh - #{$header-height} - #{$header-height} - 3rem);
 }
+
+.map-area {
+  // background-color: #FFF;
+  height: calc(100vh - 200px);
+
+  @supports (display: flex) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.map-area svg {
+  display: block;
+  height: calc(100vh - 200px);
+  width: 100%;
+}
+
+.svg--area {
+  fill: #FFF;
+  cursor: pointer;
+}
+
+.svg--area:hover {
+  stroke: #181c3a;
+  stroke-width: 3px;
+}
+
+.svg--shadow {
+  fill: rgba(#4780a8,0.5);
+  filter: url(#glow);
+}

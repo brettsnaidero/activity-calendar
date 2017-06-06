@@ -19,19 +19,40 @@ import OffCanvas from './components/OffCanvas';
 import './sass/style.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.toggleOffCanvas = this.toggleOffCanvas.bind(this);
+
+    this.state = {
+      offCanvasMenuShow: false
+    }
+  }
+
+  toggleOffCanvas() {
+    let newStatus = !this.state.offCanvasMenuShow;
+    this.setState({
+      offCanvasMenuShow: newStatus
+    });
+  }
+
   render() {
     return (
       <BrowserRouter>
-        <div className="App">
+        <div className={`container ` + (this.state.offCanvasMenuShow ? `pushy-open-right` : `pushy-closed`)}>
 
-          <OffCanvas />
+          <OffCanvas
+            toggleOffCanvas={this.toggleOffCanvas}
+          />
 
           {/* Site Overlay for Off Canvas */}
-          <div className="site-overlay"></div>
+          <div className="site-overlay" onClick={this.toggleOffCanvas}></div>
 
           <div id="container">
             {/* Header */}
-            <Header />
+            <Header
+              toggleOffCanvas={this.toggleOffCanvas}
+            />
 
             {/* Left Sidebar Area */}
             <Sidebar />

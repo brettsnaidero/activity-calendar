@@ -66,10 +66,11 @@ button.rbc-input::-moz-focus-inner {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding: 0 3px;
+  padding: 6px 3px;
   text-align: center;
   vertical-align: middle;
   font-weight: bold;
+  text-transform: uppercase;
   font-size: 90%;
   min-height: 0;
 
@@ -97,3 +98,17 @@ button.rbc-input::-moz-focus-inner {
 @import './calendar/_agenda';
 @import './calendar/_time-column';
 @import './calendar/_time-grid';
+
+/* Brett */
+.calendar {
+  height: calc(100vh - 160px);
+}
+
+.rbc-abs-full, .rbc-row-bg {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

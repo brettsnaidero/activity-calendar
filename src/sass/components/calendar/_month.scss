@@ -30,8 +30,8 @@
 }
 
 .rbc-month-view {
+  background-color: #FFF;
   position: relative;
-  border: 1px solid $calendar-border;
   display: flex;
   flex-direction: column;
   flex: 1 0 0;
@@ -73,7 +73,7 @@
   }
 }
 
-.rbc-date-cell { 
+.rbc-date-cell {
   padding-right: 5px;
   text-align: right;
 

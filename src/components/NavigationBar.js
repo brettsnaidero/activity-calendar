@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default class NavigationBar extends Component {
   constructor(props) {
@@ -13,8 +13,13 @@ export default class NavigationBar extends Component {
   render() {
     return (
       <section className="navigation-bar">
-        <NavLink to="/calendar">Calendar</NavLink>
-        <NavLink to="/map">Map</NavLink>
+        <div className="navigation-bar--mapcrumbs">
+          
+        </div>
+        <div className="navigation-bar--toggle">
+          <NavLink to="/calendar">Calendar</NavLink>
+          <NavLink to="/map">Map</NavLink>
+        </div>
       </section>
     );
   }

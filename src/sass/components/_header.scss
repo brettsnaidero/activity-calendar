@@ -1,9 +1,13 @@
 .header {
   position: relative;
-  background-color: #282c42;
+  background-color: #FFF;
   height: $header-height;
   color: white;
   width: 100%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0px 0px 20px rgba(#4780a8,0.25);
+  overflow: hidden;
 
   @supports (display: flex) {
     display: flex;
@@ -14,21 +18,20 @@
 .header--logo {
   width: 20%;
   width: calc(#{$sidebar-width});
-  padding: 10px;
-  padding: 0.75rem;
-  background-color: #3a4168;
+  padding: 16px;
+  padding: 1rem;
+  background-color: #FFF;
+  box-shadow: 0px 0px 20px rgba(71, 128, 168, 0.25);
 }
 
 .header--logo img {
   display: block;
-  max-height: $header-height - 20px;
-  margin: 0 auto;
+  max-height: $header-height - 32px;
+  width: auto;
+  // margin: 0 auto;
 }
 
 .header--controls {
-  @supports (display: flex) {
-    margin-left: auto;
-  }
 }
 
 /* Hamburger Menu Toggle */
@@ -36,7 +39,53 @@
   width: $header-height;
   height: $header-height;
   border: none;
-  background: #3a4168;
+  background: #FFF;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0px 0px 20px rgba(71, 128, 168, 0.25);
+
+  svg {
+    display: block;
+    width: $header-height / 3;
+    height: $header-height / 3;
+    stroke: #3a4168;
+    stroke-width: 0.75px;
+    stroke-linecap: round;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -$header-height / 6;
+    margin-left: -$header-height / 6;
+  }
 }
 
 /* User Dropdown */
+.header--user {
+  padding: $header-height / 4;
+  line-height: $header-height / 2;
+  padding-left: ($header-height / 2) + 20px;
+  position: relative;
+  color: #181c3a;
+
+  @supports (display: flex) {
+    margin-left: auto;
+  }
+}
+
+.user-image {
+  width: $header-height / 2;
+  height: $header-height / 2;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(71, 128, 168, 0.25);
+  margin-right: 10px;
+  position: absolute;
+  top: 50%;
+  margin-top: -$header-height / 4;
+  left: 0;
+}
+
+.user-image img {
+  width: $header-height / 2;
+  height: $header-height / 2;
+  object-fit: cover;
+}

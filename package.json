@@ -5,8 +5,9 @@
   "dependencies": {
     "chai": "^4.0.1",
     "enzyme": "^2.8.2",
+    "ignore-styles": "^5.0.1",
     "moment": "^2.18.1",
-    "node-sass-chokidar": "^0.0.2",
+    "node-sass-chokidar": "latest",
     "npm-run-all": "^4.0.2",
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
@@ -62,7 +63,7 @@
     "start-js": "node scripts/start.js",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
-    "test": "mocha --require ./test/testSetup.js --compilers babel-core/register ./test/*test.js",
+    "test": "mocha --require ignore-styles --require ./test/testSetup.js --compilers babel-core/register ./test/*test.js",
     "test:watch": "npm test -- -w"
   },
   "babel": {

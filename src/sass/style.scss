@@ -1,6 +1,6 @@
 @import '_reset';
 
-$header-height: 80px;
+$header-height: 100px;
 $sidebar-width: 320px;
 
 /* Components */
@@ -15,6 +15,7 @@ $sidebar-width: 320px;
 @import 'elements/_button';
 @import 'elements/_navigation-bar';
 @import 'elements/_form';
+@import 'elements/_typography';
 
 * {
   box-sizing: border-box;
@@ -23,6 +24,10 @@ $sidebar-width: 320px;
 
 body {
   font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  overflow: hidden;
 }
 
 .App {
@@ -40,11 +45,22 @@ body {
   width: 80%;
   width: calc(100% - #{$sidebar-width});
   float: left;
-  overflow-y: scroll;
+  background: #f1f3f5;
 }
 
 .main--area {
   padding: 20px 40px;
   padding: 1.25rem 2.5rem;
   width: 100%;
+}
+
+/* Fading */
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
 }

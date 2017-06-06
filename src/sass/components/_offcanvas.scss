@@ -8,12 +8,12 @@ $menu_width: 200px;
     height: 100%;
     top: 0;
     z-index: 9999;
-    background: #304A5D;
+    background: #181c3a;
     overflow: auto;
-    visibility: hidden;
+    // visibility: hidden;
     -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
 
-    a {
+    li {
         display: block;
         color: #FFFFFF;
         padding: 20px;
@@ -99,6 +99,9 @@ $menu_width: 200px;
 
 .pushy-open-left,
 .pushy-open-right{
+    .pushy {
+      visibility: visible;
+    }
     .site-overlay{
         display: block;
         position: fixed;
@@ -107,7 +110,7 @@ $menu_width: 200px;
         bottom: 0;
         left: 0;
         z-index: 9998;
-        background-color: rgba(255,255,255,0.5);
+        background-color: rgba(0,0,0,0.5);
         -webkit-animation: fade 500ms;
         animation: fade 500ms;
     }

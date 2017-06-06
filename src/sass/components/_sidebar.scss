@@ -7,6 +7,9 @@
   box-shadow: 0px 0px 20px rgba(#4780a8,0.25);
   overflow: hidden;
   text-align: left;
+  position: relative;
+  background-color: #181c3a;
+  color: #FFF;
 
   @supports (display: flex) {
     display: flex;
@@ -22,7 +25,8 @@
 
 /* Sidebar Top */
 .sidebar--top {
-  box-shadow: 0px 0px 20px rgba(#4780a8,0.125);
+  background-color: #303266;
+  box-shadow: 0px 0px 20px rgba(#0d0d24,0.125);
 
   @supports (display: flex) {
   }
@@ -32,6 +36,21 @@
 .sidebar--main {
   @supports (display: flex) {
   }
+}
+
+.sidebar--main h1 {
+  font-weight: bold;
+  font-size: 32px;
+  font-size: 2rem;
+}
+
+.sidebar--main ul {
+  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar--main h3:first-of-type {
+  margin-top: 0;
 }
 
 /* Sidebar Bottom */
@@ -47,4 +66,19 @@
 /* Filters */
 .sidebar--filters {
 
+}
+
+/* Map Sidebar */
+.sidebar--map {
+
+}
+
+.sidebar--map li {
+  margin: 10px 0;
+  margin: 0.75rem 0;
+}
+
+.sidebar--map li span {
+  float: right;
+  opacity: 0.5;
 }

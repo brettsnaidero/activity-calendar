@@ -3,50 +3,55 @@ import React, { Component } from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 
-BigCalendar.setLocalizer(
-  BigCalendar.momentLocalizer(moment)
-);
+import testData from '../data/testEvent';
 
 export default class Calendar extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
+    this.context = context;
     this.state = {
-      testData: [
-        {
-          'title': 'An Event',
-          'start': new Date(2017, 6, 2, 6, 0, 0),
-          'end': new Date(2017, 6, 2, 18, 0, 0)
-        },
-        {
-          'title': 'Long Event',
-          'start': new Date(2017, 6, 7),
-          'end': new Date(2017, 6, 10)
-        }
-      ]
-    }
+      events: testData
+    };
+
+    BigCalendar.setLocalizer(
+      BigCalendar.momentLocalizer(moment)
+    );
   }
 
-  onNavigate() {
-    console.log('onNavigate');
+  handleSelectSlot({start, end}) {
+      //create an event with title "Test"
+      console.log("handleSelectSlot: " + start + " - " + end);
+  }
+
+  handleSelectEvent() {
 
   }
 
-  onView() {
-    console.log('onView');
+  EventWeek(props) {
+      return <strong>{props.event.title}</strong>
+  }
 
+  EventAgenda(props) {
+      return <em>{props.event.title}</em>
   }
 
   render() {
     return (
       <section className="calendar">
         <BigCalendar
-          ref="calendar"
-          events={this.state.testData}
-          startAccessor="startDate"
-          endAccessor="endDate"
-          onNavigate={ this.onNavigate() }
-          onView={ this.onView() }
+          selectable
+          popup
+          events={this.state.events}
+          onSelectSlot={this.handleSelectSlot}
+          onSelectEvent={this.handleSelectEvent}
+          eventPropGetter={e => ({ className: 'test-class'})} /* Here you can define a style for the element */
+          components={{
+            event: this.EventWeek,
+            agenda: {
+              event: this.EventAgenda
+            }
+          }}
         />
       </section>
     );

@@ -11,9 +11,3 @@ describe('(Component) App', () => {
     expect(wrapper).to.have.length(1);
   });
 });
-
-describe('Component: MessageDetail', () => {
-  it('Does all the things', () => {
-    expect(true).to.equal(true);
-  })
-})

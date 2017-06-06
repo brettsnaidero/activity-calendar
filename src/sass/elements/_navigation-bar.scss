@@ -1,6 +1,18 @@
 .navigation-bar {
-  height: $header-height;
-  background-color: #EFEFEF;
+  height: $header-height / 2;
+
+  @supports(display: flex) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.navigation-bar a:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.navigation-bar a:last-child {
+  border-radius: 0 10px 10px 0;
 }
 
 .navigation-bar a {
@@ -8,8 +20,31 @@
   display: inline-block;
   padding: 10px;
   padding: 0.75rem;
+  font-size: 12px;
+  font-size: 0.75rem;
+  background-color: rgba(71, 128, 168, 0.1);
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  // min-width: 8rem;
+  text-align: center;
 }
 
 .navigation-bar a.active {
-  color: blue;
+  background-color: #0074cd;
+  color: #FFF;
+  box-shadow: none;
+}
+
+/* Calendar map toggle */
+.navigation-bar--toggle {
+  @supports(display: flex) {
+  }
+}
+
+/* Map breadcrumbs */
+.navigation-bar--mapcrumbs {
+  @supports(display: flex) {
+  }
 }
