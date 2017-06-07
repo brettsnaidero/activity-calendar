@@ -497,11 +497,11 @@ button.rbc-input::-moz-focus-inner {
   bottom: 0; }
 
 .map {
-  height: calc(100vh - 60px - 60px - 3rem); }
+  height: calc(100vh - 72px - 72px - 3rem); }
 
 .map-area {
   border: 1px solid rgba(106, 144, 184, 0.15);
-  height: calc(100vh - 60px - 60px - 3rem); }
+  height: calc(100vh - 72px - 72px - 3rem); }
   @supports (display: flex) {
     .map-area {
       display: flex;
@@ -510,7 +510,7 @@ button.rbc-input::-moz-focus-inner {
 
 .map-area svg {
   display: block;
-  height: calc(100vh - 60px - 60px - 3rem);
+  height: calc(100vh - 72px - 72px - 3rem);
   width: 100%; }
 
 .svg--area {
@@ -557,7 +557,7 @@ button.rbc-input::-moz-focus-inner {
 
 .sidebar {
   height: 100vh;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 72px);
   width: 20%;
   width: calc(320px);
   float: left;
@@ -577,6 +577,10 @@ button.rbc-input::-moz-focus-inner {
   width: 100%; }
 
 /* Sidebar Top */
+.sidebar--top {
+  overflow: hidden;
+  box-shadow: 0px 0px 20px rgba(82, 108, 203, 0.15); }
+
 /* Sidebar Middle */
 .sidebar--main h1 {
   font-weight: bold;
@@ -612,8 +616,9 @@ button.rbc-input::-moz-focus-inner {
 
 .header {
   position: relative;
-  background-color: #FFF;
-  height: 60px;
+  background-color: #111c24;
+  background: linear-gradient(to top, #111c24 0%, #19364a 100%);
+  height: 72px;
   color: white;
   width: 100%;
   position: relative;
@@ -628,63 +633,62 @@ button.rbc-input::-moz-focus-inner {
   width: 20%;
   width: calc(320px);
   padding: 16px;
-  padding: 1rem;
-  background-color: #FFF; }
+  padding: 1rem; }
 
 .header--logo img {
   display: block;
-  max-height: 28px;
+  max-height: 40px;
   width: auto; }
 
 /* Hamburger Menu Toggle */
 .menu-btn {
-  width: 60px;
-  height: 60px;
+  width: 72px;
+  height: 72px;
   border: none;
-  background: #FFF;
+  background: #0074cd;
   cursor: pointer;
   position: relative;
   box-shadow: 0px 0px 20px rgba(71, 128, 168, 0.25); }
   .menu-btn svg {
     display: block;
-    width: 20px;
-    height: 20px;
-    stroke: #3a4168;
+    width: 24px;
+    height: 24px;
+    stroke: #FFF;
     stroke-width: 0.75px;
     stroke-linecap: round;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -10px;
-    margin-left: -10px; }
+    margin-top: -12px;
+    margin-left: -12px; }
 
 /* User Dropdown */
 .header--user {
-  padding: 15px;
-  line-height: 30px;
-  padding-left: 40px;
+  padding: 18px;
+  line-height: 36px;
+  padding-left: 46px;
   position: relative;
-  color: #181c3a;
-  font-size: 12px;
-  font-size: 0.75rem; }
+  color: #FFF;
+  font-size: 14px;
+  font-size: 0.875rem; }
   @supports (display: flex) {
     .header--user {
       margin-left: auto; } }
 
 .user-image {
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(71, 128, 168, 0.2);
   margin-right: 10px;
   position: absolute;
   top: 50%;
-  margin-top: -15px;
+  margin-top: -18px;
   left: 0; }
 
 .user-image img {
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   object-fit: cover; }
 
 /* Menu Appearance */
@@ -926,7 +930,7 @@ button.rbc-input::-moz-focus-inner {
     opacity: 0.5; }
 
 .navigation-bar {
-  height: 30px; }
+  height: 36px; }
   @supports (display: flex) {
     .navigation-bar {
       display: flex;
@@ -1102,7 +1106,7 @@ body {
 /* Main */
 .main {
   height: 100vh;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 72px);
   width: 80%;
   width: calc(100% - 320px);
   float: left;

@@ -1,6 +1,7 @@
 .header {
   position: relative;
-  background-color: #FFF;
+  background-color: #111c24;
+  background: linear-gradient(to top, #111c24 0%, #19364a 100%);
   height: $header-height;
   color: white;
   width: 100%;
@@ -19,8 +20,6 @@
   width: calc(#{$sidebar-width});
   padding: 16px;
   padding: 1rem;
-  background-color: #FFF;
-  // box-shadow: 0px 0px 20px rgba(71, 128, 168, 0.25);
 }
 
 .header--logo img {
@@ -38,7 +37,7 @@
   width: $header-height;
   height: $header-height;
   border: none;
-  background: #FFF;
+  background: #0074cd;
   cursor: pointer;
   position: relative;
   box-shadow: 0px 0px 20px rgba(71, 128, 168, 0.25);
@@ -47,7 +46,7 @@
     display: block;
     width: $header-height / 3;
     height: $header-height / 3;
-    stroke: #3a4168;
+    stroke: #FFF;
     stroke-width: 0.75px;
     stroke-linecap: round;
     position: absolute;
@@ -64,9 +63,9 @@
   line-height: $header-height / 2;
   padding-left: ($header-height / 2) + 10px;
   position: relative;
-  color: #181c3a;
-  font-size: 12px;
-  font-size: 0.75rem;
+  color: #FFF;
+  font-size: 14px;
+  font-size: 0.875rem;
 
   @supports (display: flex) {
     margin-left: auto;
