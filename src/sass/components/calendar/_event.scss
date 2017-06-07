@@ -8,6 +8,13 @@
   &.rbc-selected {
     background-color: darken($event-bg, 10%);
   }
+
+  &.typea-class {
+    background-color: #34923f;
+  }
+  &.typeb-class {
+    background-color: #b352cc;
+  }
 }
 
 .rbc-event-label {

@@ -4,12 +4,11 @@
   width: 20%;
   width: calc(#{$sidebar-width});
   float: left;
-  box-shadow: 0px 0px 20px rgba(#4780a8,0.25);
+  box-shadow: 0px 0px 20px rgba(#526ccb,0.15);
   overflow: hidden;
   text-align: left;
   position: relative;
-  background-color: #181c3a;
-  color: #FFF;
+  color: #3a4168;
 
   @supports (display: flex) {
     display: flex;
@@ -25,8 +24,6 @@
 
 /* Sidebar Top */
 .sidebar--top {
-  background-color: #303266;
-  box-shadow: 0px 0px 20px rgba(#0d0d24,0.125);
 
   @supports (display: flex) {
   }
@@ -74,6 +71,8 @@
 }
 
 .sidebar--map li {
+  font-size: 12px;
+  font-size: 0.75rem;
   margin: 10px 0;
   margin: 0.75rem 0;
 }

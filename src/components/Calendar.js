@@ -10,10 +10,12 @@ export default class Calendar extends Component {
     super(props, context);
 
     this.context = context;
+
     this.state = {
       events: testData
     };
 
+    // Use Moment plugin with calendar
     BigCalendar.setLocalizer(
       BigCalendar.momentLocalizer(moment)
     );
@@ -29,11 +31,19 @@ export default class Calendar extends Component {
   }
 
   EventWeek(props) {
-      return <strong>{props.event.title}</strong>
+      return (
+        <strong>
+          { props.event.title }
+        </strong>
+      )
   }
 
   EventAgenda(props) {
-      return <em>{props.event.title}</em>
+      return (
+        <em>
+          { props.event.title }
+        </em>
+      )
   }
 
   render() {
@@ -45,7 +55,7 @@ export default class Calendar extends Component {
           events={this.state.events}
           onSelectSlot={this.handleSelectSlot}
           onSelectEvent={this.handleSelectEvent}
-          eventPropGetter={e => ({ className: 'test-class'})} /* Here you can define a style for the element */
+          eventPropGetter={e => ({ className: `${e.class}-class` })} 
           components={{
             event: this.EventWeek,
             agenda: {

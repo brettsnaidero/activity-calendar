@@ -20,7 +20,7 @@ export default class Filters extends Component {
             <input id="op1" className="checkbox" name="op1" type="checkbox" value="option1" />
             <label htmlFor="op1">
               <svg viewBox="0 0 10 10">
-                <polyline points="1.5,5.5 4,8 8,2"></polyline>
+                <polyline points="1.5,5 4.25,7.75 8.5,1.75"></polyline>
               </svg>
               Option 1
             </label>
@@ -30,7 +30,7 @@ export default class Filters extends Component {
             <input id="op2" className="checkbox" name="op2" type="checkbox" value="option2" />
             <label htmlFor="op2">
               <svg viewBox="0 0 10 10">
-                <polyline points="1.5,5.5 4,8 8,2"></polyline>
+                <polyline points="1.5,5 4.25,7.75 8.5,1.75"></polyline>
               </svg>
               Option 1
             </label>
@@ -46,7 +46,7 @@ export default class Filters extends Component {
             <input id="ev1" className="checkbox" name="ev1" type="checkbox" value="event1" />
             <label htmlFor="ev1">
               <svg viewBox="0 0 10 10">
-                <polyline points="1.5,5.5 4,8 8,2"></polyline>
+                <polyline points="1.5,5 4.25,7.75 8.5,1.75"></polyline>
               </svg>
               Event type 1
             </label>
@@ -56,7 +56,7 @@ export default class Filters extends Component {
             <input id="ev2" className="checkbox" name="ev2" type="checkbox" value="event2" />
             <label htmlFor="ev2">
               <svg viewBox="0 0 10 10">
-                <polyline points="1.5,5.5 4,8 8,2"></polyline>
+                <polyline points="1.5,5 4.25,7.75 8.5,1.75"></polyline>
               </svg>
               Event type 2
             </label>

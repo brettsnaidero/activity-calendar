@@ -3,8 +3,8 @@
 }
 
 .map-area {
-  // background-color: #FFF;
-  height: calc(100vh - 200px);
+  border: 1px solid rgba(#6a90b8,0.15);
+  height: calc(100vh - #{$header-height} - #{$header-height} - 3rem);
 
   @supports (display: flex) {
     display: flex;
@@ -15,7 +15,7 @@
 
 .map-area svg {
   display: block;
-  height: calc(100vh - 200px);
+  height: calc(100vh - #{$header-height} - #{$header-height} - 3rem);
   width: 100%;
 }
 
@@ -32,4 +32,50 @@
 .svg--shadow {
   fill: rgba(#4780a8,0.5);
   filter: url(#glow);
+}
+
+/* Fade In Areas */
+$timing: 0.1s;
+.map-area svg g {
+  animation: fadeAreaIn 1s backwards ease;
+
+  &:nth-child(2) {
+    animation-delay: 1 * $timing;
+  }
+  &:nth-child(3) {
+    animation-delay: 2 * $timing;
+  }
+  &:nth-child(4) {
+    animation-delay: 3 * $timing;
+  }
+  &:nth-child(5) {
+    animation-delay: 4 * $timing;
+  }
+  &:nth-child(6) {
+    animation-delay: 5 * $timing;
+  }
+  &:nth-child(7) {
+    animation-delay: 6 * $timing;
+  }
+  &:nth-child(8) {
+    animation-delay: 7 * $timing;
+  }
+  &:nth-child(9) {
+    animation-delay: 8 * $timing;
+  }
+  &:nth-child(10) {
+    animation-delay: 9 * $timing;
+  }
+  &:nth-child(11) {
+    animation-delay: 10 * $timing;
+  }
+}
+
+@keyframes fadeAreaIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

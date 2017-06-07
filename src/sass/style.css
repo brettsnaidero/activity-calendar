@@ -127,7 +127,7 @@ button.rbc-input::-moz-focus-inner {
     border: none;
     background-image: none;
     padding: .375rem 1rem;
-    border-radius: 10px;
+    border-radius: 5px;
     line-height: normal;
     white-space: nowrap;
     cursor: pointer;
@@ -183,6 +183,10 @@ button.rbc-input::-moz-focus-inner {
   color: #fff; }
   .rbc-event.rbc-selected {
     background-color: #00579a; }
+  .rbc-event.typea-class {
+    background-color: #34923f; }
+  .rbc-event.typeb-class {
+    background-color: #b352cc; }
 
 .rbc-event-label {
   font-size: 80%; }
@@ -493,10 +497,11 @@ button.rbc-input::-moz-focus-inner {
   bottom: 0; }
 
 .map {
-  height: calc(100vh - 100px - 100px - 3rem); }
+  height: calc(100vh - 60px - 60px - 3rem); }
 
 .map-area {
-  height: calc(100vh - 200px); }
+  border: 1px solid rgba(106, 144, 184, 0.15);
+  height: calc(100vh - 60px - 60px - 3rem); }
   @supports (display: flex) {
     .map-area {
       display: flex;
@@ -505,7 +510,7 @@ button.rbc-input::-moz-focus-inner {
 
 .map-area svg {
   display: block;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 60px - 60px - 3rem);
   width: 100%; }
 
 .svg--area {
@@ -520,18 +525,47 @@ button.rbc-input::-moz-focus-inner {
   fill: rgba(71, 128, 168, 0.5);
   filter: url(#glow); }
 
+/* Fade In Areas */
+.map-area svg g {
+  animation: fadeAreaIn 1s backwards ease; }
+  .map-area svg g:nth-child(2) {
+    animation-delay: 0.1s; }
+  .map-area svg g:nth-child(3) {
+    animation-delay: 0.2s; }
+  .map-area svg g:nth-child(4) {
+    animation-delay: 0.3s; }
+  .map-area svg g:nth-child(5) {
+    animation-delay: 0.4s; }
+  .map-area svg g:nth-child(6) {
+    animation-delay: 0.5s; }
+  .map-area svg g:nth-child(7) {
+    animation-delay: 0.6s; }
+  .map-area svg g:nth-child(8) {
+    animation-delay: 0.7s; }
+  .map-area svg g:nth-child(9) {
+    animation-delay: 0.8s; }
+  .map-area svg g:nth-child(10) {
+    animation-delay: 0.9s; }
+  .map-area svg g:nth-child(11) {
+    animation-delay: 1s; }
+
+@keyframes fadeAreaIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 .sidebar {
   height: 100vh;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 60px);
   width: 20%;
   width: calc(320px);
   float: left;
-  box-shadow: 0px 0px 20px rgba(71, 128, 168, 0.25);
+  box-shadow: 0px 0px 20px rgba(82, 108, 203, 0.15);
   overflow: hidden;
   text-align: left;
   position: relative;
-  background-color: #181c3a;
-  color: #FFF; }
+  color: #3a4168; }
   @supports (display: flex) {
     .sidebar {
       display: flex;
@@ -543,10 +577,6 @@ button.rbc-input::-moz-focus-inner {
   width: 100%; }
 
 /* Sidebar Top */
-.sidebar--top {
-  background-color: #303266;
-  box-shadow: 0px 0px 20px rgba(13, 13, 36, 0.125); }
-
 /* Sidebar Middle */
 .sidebar--main h1 {
   font-weight: bold;
@@ -571,6 +601,8 @@ button.rbc-input::-moz-focus-inner {
 /* Filters */
 /* Map Sidebar */
 .sidebar--map li {
+  font-size: 12px;
+  font-size: 0.75rem;
   margin: 10px 0;
   margin: 0.75rem 0; }
 
@@ -581,12 +613,11 @@ button.rbc-input::-moz-focus-inner {
 .header {
   position: relative;
   background-color: #FFF;
-  height: 100px;
+  height: 60px;
   color: white;
   width: 100%;
   position: relative;
   z-index: 2;
-  box-shadow: 0px 0px 20px rgba(71, 128, 168, 0.25);
   overflow: hidden; }
   @supports (display: flex) {
     .header {
@@ -598,18 +629,17 @@ button.rbc-input::-moz-focus-inner {
   width: calc(320px);
   padding: 16px;
   padding: 1rem;
-  background-color: #FFF;
-  box-shadow: 0px 0px 20px rgba(71, 128, 168, 0.25); }
+  background-color: #FFF; }
 
 .header--logo img {
   display: block;
-  max-height: 68px;
+  max-height: 28px;
   width: auto; }
 
 /* Hamburger Menu Toggle */
 .menu-btn {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   border: none;
   background: #FFF;
   cursor: pointer;
@@ -617,42 +647,44 @@ button.rbc-input::-moz-focus-inner {
   box-shadow: 0px 0px 20px rgba(71, 128, 168, 0.25); }
   .menu-btn svg {
     display: block;
-    width: 33.33333px;
-    height: 33.33333px;
+    width: 20px;
+    height: 20px;
     stroke: #3a4168;
     stroke-width: 0.75px;
     stroke-linecap: round;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -16.66667px;
-    margin-left: -16.66667px; }
+    margin-top: -10px;
+    margin-left: -10px; }
 
 /* User Dropdown */
 .header--user {
-  padding: 25px;
-  line-height: 50px;
-  padding-left: 70px;
+  padding: 15px;
+  line-height: 30px;
+  padding-left: 40px;
   position: relative;
-  color: #181c3a; }
+  color: #181c3a;
+  font-size: 12px;
+  font-size: 0.75rem; }
   @supports (display: flex) {
     .header--user {
       margin-left: auto; } }
 
 .user-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 20px rgba(71, 128, 168, 0.25);
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(71, 128, 168, 0.2);
   margin-right: 10px;
   position: absolute;
   top: 50%;
-  margin-top: -25px;
+  margin-top: -15px;
   left: 0; }
 
 .user-image img {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   object-fit: cover; }
 
 /* Menu Appearance */
@@ -857,17 +889,44 @@ button.rbc-input::-moz-focus-inner {
   border: none;
   color: #FFF;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 8px;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  text-decoration: none; }
+  text-decoration: none;
+  position: relative;
+  border: 3px solid #FFF; }
 
 .button--schedule {
-  background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 100%); }
+  background: linear-gradient(45deg, #3bade3 0%, #576fe6 25%, #9844b7 51%, #ff357f 100%);
+  background: linear-gradient(45deg, #576fe6 0%, #9844b7 50%, #ff357f 100%); }
+  .button--schedule:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 50px;
+    z-index: -1;
+    filter: blur(12px);
+    background-image: linear-gradient(90deg, #576fe6, transparent);
+    opacity: 0.5; }
+  .button--schedule:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 50px;
+    z-index: -1;
+    filter: blur(12px);
+    background-image: linear-gradient(90deg, transparent, #ff357f);
+    opacity: 0.5; }
 
 .navigation-bar {
-  height: 50px; }
+  height: 30px; }
   @supports (display: flex) {
     .navigation-bar {
       display: flex;
@@ -919,7 +978,7 @@ ul label,
 .field.checkbox label {
   float: none;
   text-align: left;
-  padding: 0 0 0 36px; }
+  padding: 0 0 0 30px; }
 
 input[type="radio"],
 input[type="checkbox"] {
@@ -930,11 +989,11 @@ input[type="checkbox"] {
   display: inline-block;
   vertical-align: middle;
   z-index: 100;
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
   top: 50%;
   left: 0;
-  margin-top: -13px;
+  margin-top: -10px;
   position: absolute;
   cursor: pointer;
   -webkit-box-sizing: border-box;
@@ -947,11 +1006,11 @@ input[type="checkbox"] {
 ul.optionset li label::before,
 input[type="radio"],
 input[type="checkbox"] {
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
   top: 50%;
   left: 0;
-  margin-top: -13px;
+  margin-top: -10px;
   position: absolute;
   cursor: pointer;
   box-sizing: border-box; }
@@ -973,11 +1032,11 @@ ul.optionset.checkboxset li label::before {
 /* Tick or Marker */
 input[type="checkbox"] + label svg,
 input[type="radio"] + label svg {
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   top: 50%;
   left: 2px;
-  margin-top: -11px;
+  margin-top: -8px;
   position: absolute;
   cursor: pointer; }
 
@@ -985,8 +1044,8 @@ input[type="checkbox"] + label svg {
   fill: none;
   stroke: #052a4e;
   stroke-width: 1.5px;
-  stroke-dasharray: 10.746636390686035px;
-  stroke-dashoffset: 10.746636390686035px;
+  stroke-dasharray: 11.24180793762207px;
+  stroke-dashoffset: 11.24180793762207px;
   transition: 0.5s stroke-dashoffset ease; }
 
 input[type="radio"] + label svg {
@@ -1043,7 +1102,7 @@ body {
 /* Main */
 .main {
   height: 100vh;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 60px);
   width: 80%;
   width: calc(100% - 320px);
   float: left;

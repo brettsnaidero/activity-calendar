@@ -20,7 +20,7 @@ ul label,
 .field.checkbox label {
 	float: none;
 	text-align: left;
-	padding: 0 0 0 36px;
+	padding: 0 0 0 30px;
 }
 
 input[type="radio"],
@@ -32,11 +32,11 @@ input[type="checkbox"] {
   display: inline-block;
   vertical-align: middle;
   z-index: 100;
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
   top: 50%;
   left: 0;
-  margin-top: -13px;
+  margin-top: -10px;
   position: absolute;
   cursor: pointer;
   -webkit-box-sizing: border-box;
@@ -50,11 +50,11 @@ input[type="checkbox"] {
 ul.optionset li label::before,
 input[type="radio"],
 input[type="checkbox"] {
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
   top: 50%;
   left: 0;
-  margin-top: -13px;
+  margin-top: -10px;
   position: absolute;
   cursor: pointer;
   box-sizing: border-box;
@@ -79,11 +79,11 @@ ul.optionset.checkboxset li label::before {
 /* Tick or Marker */
 input[type="checkbox"] + label svg,
 input[type="radio"] + label svg {
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   top: 50%;
   left: 2px;
-  margin-top: -11px;
+  margin-top: -8px;
   position: absolute;
   cursor: pointer;
 }
@@ -92,8 +92,8 @@ input[type="checkbox"] + label svg {
   fill: none;
   stroke: #052a4e;
   stroke-width: 1.5px;
-  stroke-dasharray: 10.746636390686035px;
-  stroke-dashoffset: 10.746636390686035px;
+  stroke-dasharray: 11.24180793762207px;
+  stroke-dashoffset: 11.24180793762207px;
   transition: 0.5s stroke-dashoffset ease;
 }
 
