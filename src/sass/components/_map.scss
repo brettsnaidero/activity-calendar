@@ -19,14 +19,15 @@
 }
 
 .svg--area {
-  fill: #49953b;
-  stroke: #FFF;
+  fill: $wspt-colour9;
+  stroke: desaturate(lighten($wspt-colour9,60%),10%);
   stroke-width: 2px;
+  stroke-linecap: round;
   cursor: pointer;
 }
 
 .map-area svg g:hover .svg--area {
-  stroke: #3655CE;
+  stroke: #FFFFFF;
   stroke-width: 3px;
 }
 

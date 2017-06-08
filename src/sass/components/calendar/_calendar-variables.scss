@@ -1,7 +1,7 @@
 
 $out-of-range-color: lighten(#333, 50%);
 
-$calendar-border: #3655CE;
+$calendar-border: #192a6c;
 $cell-border: #192a6c;
 
 $border-color: #3655CE;
@@ -13,7 +13,7 @@ $time-selection-bg-color: rgba(0,0,0, .50);
 $date-selection-bg-color: rgba(0,0,0, .10);
 
 
-$event-bg: #0074cd;
+$event-bg: $wspt-colour7;
 $event-border: #192a6c;
 $event-color: #fff;
 $event-border-radius: 3px;
@@ -28,4 +28,4 @@ $current-time-color: #74ad31;
 
 $rbc-css-prefix: rbc-i;
 
-$today-highlight-bg: rgba(#3655CE,0.2);
+$today-highlight-bg: rgba(#3655CE,0.15);

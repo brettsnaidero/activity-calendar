@@ -12,35 +12,35 @@
   }
 
   &.typea-class {
-    background-color: #34923f;
-    background: linear-gradient(to bottom, #34923f 0%, darken(#34923f,5%) 100%);
+    background-color: $wspt-colour1;
+    background: linear-gradient(to bottom, $wspt-colour1 0%, darken($wspt-colour1,5%) 100%);
 
     &:hover {
-      background: #34923f;
+      background: $wspt-colour1;
     }
   }
   &.typeb-class {
-    background-color: #9239c3;
-    background: linear-gradient(to bottom, #9239c3 0%, darken(#9239c3,5%) 100%);
+    background-color: $wspt-colour6;
+    background: linear-gradient(to bottom, $wspt-colour6 0%, darken($wspt-colour6,5%) 100%);
 
     &:hover {
-      background: #9239c3;
+      background: $wspt-colour6;
     }
   }
   &.typec-class {
-    background-color: #d82789;
-    background: linear-gradient(to bottom, #d82789 0%, darken(#d82789,5%) 100%);
+    background-color: $wspt-colour4;
+    background: linear-gradient(to bottom, $wspt-colour4 0%, darken($wspt-colour4,5%) 100%);
 
     &:hover {
-      background: #d82789;
+      background: $wspt-colour4;
     }
   }
   &.typed-class {
-    background-color: #f1992c;
-    background: linear-gradient(to bottom, #f1992c 0%, darken(#f1992c,5%) 100%);
+    background-color: $wspt-colour9;
+    background: linear-gradient(to bottom, $wspt-colour9 0%, darken($wspt-colour9,5%) 100%);
 
     &:hover {
-      background: #f1992c;
+      background: $wspt-colour9;
     }
   }
 }

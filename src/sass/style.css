@@ -104,12 +104,13 @@ button.rbc-input::-moz-focus-inner {
   z-index: 4; }
 
 .rbc-today {
-  background-color: rgba(54, 85, 206, 0.2); }
+  background-color: rgba(54, 85, 206, 0.15); }
 
 .rbc-toolbar {
   display: flex;
   align-items: center;
-  margin-bottom: 10px; }
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem; }
   .rbc-toolbar .rbc-toolbar-label {
     width: 100%;
     padding: 0 10px;
@@ -122,8 +123,7 @@ button.rbc-input::-moz-focus-inner {
     display: inline-block;
     margin: 0;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    text-transform: capitalize;
     text-align: center;
     vertical-align: middle;
     background: rgba(71, 128, 168, 0.1);
@@ -140,16 +140,16 @@ button.rbc-input::-moz-focus-inner {
     outline: none; }
     .rbc-toolbar button:active, .rbc-toolbar button.rbc-active {
       background-image: none;
-      background-color: #0074cd;
+      background-color: #0046ad;
       color: #FFF; }
       .rbc-toolbar button:active:hover, .rbc-toolbar button:active:focus, .rbc-toolbar button.rbc-active:hover, .rbc-toolbar button.rbc-active:focus {
-        background-color: #0074cd;
+        background-color: #0046ad;
         color: #FFF; }
     .rbc-toolbar button:focus {
-      background-color: #0074cd;
+      background-color: #0046ad;
       color: #FFF; }
     .rbc-toolbar button:hover {
-      background-color: #0074cd;
+      background-color: #0046ad;
       color: #FFF; }
 
 .rbc-btn-group {
@@ -182,33 +182,33 @@ button.rbc-input::-moz-focus-inner {
 .rbc-event {
   cursor: pointer;
   padding: 3px 5px;
-  background-color: #0074cd;
+  background-color: #0046ad;
   border-radius: 3px;
   color: #fff;
   font-size: 14px;
   font-size: 0.85rem; }
   .rbc-event.rbc-selected {
-    background-color: #00579a; }
+    background-color: #00317a; }
   .rbc-event.typea-class {
-    background-color: #34923f;
-    background: linear-gradient(to bottom, #34923f 0%, #2d7f37 100%); }
+    background-color: #e98300;
+    background: linear-gradient(to bottom, #e98300 0%, #d07500 100%); }
     .rbc-event.typea-class:hover {
-      background: #34923f; }
+      background: #e98300; }
   .rbc-event.typeb-class {
-    background-color: #9239c3;
-    background: linear-gradient(to bottom, #9239c3 0%, #8333af 100%); }
+    background-color: #009ee0;
+    background: linear-gradient(to bottom, #009ee0 0%, #008cc7 100%); }
     .rbc-event.typeb-class:hover {
-      background: #9239c3; }
+      background: #009ee0; }
   .rbc-event.typec-class {
-    background-color: #d82789;
-    background: linear-gradient(to bottom, #d82789 0%, #c2237b 100%); }
+    background-color: #e21776;
+    background: linear-gradient(to bottom, #e21776 0%, #cb156a 100%); }
     .rbc-event.typec-class:hover {
-      background: #d82789; }
+      background: #e21776; }
   .rbc-event.typed-class {
-    background-color: #f1992c;
-    background: linear-gradient(to bottom, #f1992c 0%, #ef8d14 100%); }
+    background-color: #00af3f;
+    background: linear-gradient(to bottom, #00af3f 0%, #009636 100%); }
     .rbc-event.typed-class:hover {
-      background: #f1992c; }
+      background: #00af3f; }
 
 .rbc-event-label {
   font-size: 80%; }
@@ -258,7 +258,7 @@ button.rbc-input::-moz-focus-inner {
   flex: 1 0 0;
   width: 100%;
   user-select: none;
-  border: 1px solid #3655CE;
+  border: 1px solid #192a6c;
   height: 100%; }
   .rbc-month-view .rbc-header {
     border-bottom: 1px solid #192a6c; }
@@ -328,7 +328,8 @@ button.rbc-input::-moz-focus-inner {
     width: 100%;
     border: 1px solid #192a6c; }
     .rbc-agenda-view table tbody > tr > td {
-      padding: 5px 10px;
+      padding: 12px;
+      padding: 0.75rem;
       vertical-align: top; }
     .rbc-agenda-view table .rbc-agenda-time-cell {
       padding-left: 15px;
@@ -342,7 +343,8 @@ button.rbc-input::-moz-focus-inner {
     .rbc-agenda-view table tbody > tr + tr {
       border-top: 1px solid #192a6c; }
     .rbc-agenda-view table thead > tr > th {
-      padding: 3px 5px;
+      padding: 12px;
+      padding: 0.75rem;
       text-align: left;
       border-bottom: 1px solid #192a6c; }
       .rbc-rtl .rbc-agenda-view table thead > tr > th {
@@ -430,7 +432,7 @@ button.rbc-input::-moz-focus-inner {
   flex-direction: column;
   flex: 1;
   width: 100%;
-  border: 1px solid #3655CE;
+  border: 1px solid #192a6c;
   min-height: 0; }
   .rbc-time-view .rbc-time-gutter {
     white-space: nowrap; }
@@ -475,10 +477,10 @@ button.rbc-input::-moz-focus-inner {
     background-color: #17265a; }
   .rbc-time-content::-webkit-scrollbar {
     width: 10px;
-    background-color: #F5F5F5; }
+    background-color: #17265a; }
   .rbc-time-content::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: #0074cd; }
+    background-color: #0046ad; }
   .rbc-time-content > .rbc-time-gutter {
     flex: none; }
   .rbc-time-content > * + * > * {
@@ -513,7 +515,7 @@ button.rbc-input::-moz-focus-inner {
 
 /* Brett */
 .calendar {
-  height: calc(100vh - 72px - 40px); }
+  height: calc(100vh - 80px - 40px); }
 
 .rbc-abs-full, .rbc-row-bg {
   overflow: hidden;
@@ -524,10 +526,10 @@ button.rbc-input::-moz-focus-inner {
   bottom: 0; }
 
 .map {
-  height: calc(100vh - 72px - 40px); }
+  height: calc(100vh - 80px - 40px); }
 
 .map-area {
-  height: calc(100vh - 72px - 40px); }
+  height: calc(100vh - 80px - 40px); }
   @supports (display: flex) {
     .map-area {
       display: flex;
@@ -536,17 +538,18 @@ button.rbc-input::-moz-focus-inner {
 
 .map-area svg {
   display: block;
-  height: calc(100vh - 72px - 40px);
+  height: calc(100vh - 80px - 40px);
   width: 100%; }
 
 .svg--area {
-  fill: #49953b;
-  stroke: #FFF;
+  fill: #00af3f;
+  stroke: #e3feed;
   stroke-width: 2px;
+  stroke-linecap: round;
   cursor: pointer; }
 
 .map-area svg g:hover .svg--area {
-  stroke: #3655CE;
+  stroke: #FFFFFF;
   stroke-width: 3px; }
 
 .map-area text {
@@ -594,7 +597,7 @@ button.rbc-input::-moz-focus-inner {
 
 .sidebar {
   height: 100vh;
-  height: calc(100vh - 72px);
+  height: calc(100vh - 80px);
   width: 20%;
   width: calc(320px);
   float: left;
@@ -627,13 +630,13 @@ button.rbc-input::-moz-focus-inner {
   height: 100%;
   overflow-y: scroll; }
   .sidebar--main::-webkit-scrollbar-track {
-    background-color: #F5F5F5; }
+    background-color: #EFEFEF; }
   .sidebar--main::-webkit-scrollbar {
     width: 10px;
-    background-color: #F5F5F5; }
+    background-color: #EFEFEF; }
   .sidebar--main::-webkit-scrollbar-thumb {
     border-radius: 6px;
-    background-color: #0074cd; }
+    background-color: #0046ad; }
 
 .sidebar--main h1 {
   background: -webkit-linear-gradient(45deg, #576fe6 0%, #9844b7 50%, #ff357f 100%);
@@ -685,9 +688,8 @@ button.rbc-input::-moz-focus-inner {
 
 .header {
   position: relative;
-  background-color: #3C3EB3;
-  background: linear-gradient(to top, #3655CE 0%, #3C3EB3 100%);
-  height: 72px;
+  background-color: #0046ad;
+  height: 80px;
   color: white;
   width: 100%;
   position: relative;
@@ -701,8 +703,9 @@ button.rbc-input::-moz-focus-inner {
 .header--logo {
   width: 20%;
   width: calc(320px);
-  padding: 16px;
-  padding: 1rem; }
+  padding: 8px;
+  padding: 0.5rem;
+  background: #0050c7; }
 
 .header--logo .tag {
   font-size: 14px;
@@ -710,40 +713,45 @@ button.rbc-input::-moz-focus-inner {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: bold;
-  text-align: center; }
+  text-align: center;
+  display: none; }
 
 .header--logo img {
-  display: none;
-  max-height: 40px;
-  width: auto; }
+  display: block;
+  max-height: 64px;
+  width: auto;
+  margin: 0 auto; }
 
 /* Hamburger Menu Toggle */
 .menu-btn {
-  width: 72px;
-  height: 72px;
+  width: 80px;
+  height: 80px;
   border: none;
-  background: #3655CE;
+  background: #0050c7;
   cursor: pointer;
-  position: relative; }
+  position: relative;
+  outline: none; }
+  .menu-btn:hover, .menu-btn:focus {
+    background: #005be0; }
   .menu-btn svg {
     display: block;
-    width: 24px;
-    height: 24px;
+    width: 26.66667px;
+    height: 26.66667px;
     stroke: #FFF;
     stroke-width: 0.75px;
     stroke-linecap: round;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -12px;
-    margin-left: -12px; }
+    margin-top: -13.33333px;
+    margin-left: -13.33333px; }
 
 /* User Dropdown */
 .header--user {
-  padding: 18px;
-  line-height: 36px;
-  padding-left: 56px;
-  padding-right: 36px;
+  padding: 20px;
+  line-height: 40px;
+  padding-left: 60px;
+  padding-right: 35px;
   position: relative;
   color: #FFF;
   font-size: 14px;
@@ -807,21 +815,21 @@ button.rbc-input::-moz-focus-inner {
     color: #ff357f; }
 
 .user-image {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(71, 128, 168, 0.2);
   margin-right: 10px;
   position: absolute;
   top: 50%;
-  margin-top: -18px;
+  margin-top: -20px;
   left: 10px;
   background-color: #FFF;
   border: 1px solid #FFF; }
 
 .user-image img {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   object-fit: cover; }
 
 /* Menu Appearance */
@@ -1065,11 +1073,11 @@ button.rbc-input::-moz-focus-inner {
   .button--toggle.second {
     border-radius: 0px 8px 8px 0px; }
   .button--toggle.active {
-    background: #0074cd;
+    background: #0046ad;
     color: #FFF; }
 
 .navigation-bar {
-  height: 36px; }
+  height: 40px; }
   @supports (display: flex) {
     .navigation-bar {
       display: flex;
@@ -1096,7 +1104,7 @@ button.rbc-input::-moz-focus-inner {
   text-align: center; }
 
 .navigation-bar a.active {
-  background-color: #0074cd;
+  background-color: #0046ad;
   color: #FFF;
   box-shadow: none; }
 
@@ -1224,7 +1232,7 @@ input[type="radio"]:hover + label::before {
 
 input[type="checkbox"]:checked + label::before,
 input[type="radio"]:checked + label::before {
-  border-color: #2ec72e; }
+  border-color: #00af3f; }
 
 input[type="checkbox"]:checked + label svg {
   stroke-dashoffset: 0px; }
@@ -1414,10 +1422,10 @@ p {
 
 * {
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'FF Meta', 'Open Sans', sans-serif; }
 
 body {
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'FF Meta', 'Open Sans', sans-serif; }
 
 .container {
   overflow: hidden; }
@@ -1431,7 +1439,7 @@ body {
 /* Main */
 .main {
   height: 100vh;
-  height: calc(100vh - 72px);
+  height: calc(100vh - 80px);
   width: 80%;
   width: calc(100% - 320px);
   float: left;
@@ -1442,7 +1450,7 @@ body {
     background-color: #17265a; }
   .main::-webkit-scrollbar {
     width: 10px;
-    background-color: #F5F5F5; }
+    background-color: #17265a; }
   .main::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: #FFF; }

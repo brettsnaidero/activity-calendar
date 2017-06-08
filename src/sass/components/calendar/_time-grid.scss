@@ -87,12 +87,12 @@
 
   &::-webkit-scrollbar {
   	width: 10px;
-  	background-color: #F5F5F5;
+  	background-color: #17265a;
   }
 
   &::-webkit-scrollbar-thumb {
   	border-radius: 10px;
-  	background-color: #0074cd;
+  	background-color: $wspt-colour7;
   }
 
   > .rbc-time-gutter {

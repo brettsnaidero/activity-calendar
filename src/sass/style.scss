@@ -1,7 +1,19 @@
 @import '_reset';
 
-$header-height: 72px;
+$header-height: 80px;
 $sidebar-width: 320px;
+
+$wspt-colour1: rgb(233,131,0); // Orange
+$wspt-colour2: rgb(213,43,30); // Red
+$wspt-colour3: rgb(170,39,47); // DarkRed
+$wspt-colour4: rgb(226,23,118); // Pink
+$wspt-colour5: rgb(149,45,152); // Violet
+$wspt-colour6: rgb(0,158,224); // Cyan
+$wspt-colour7: rgb(0,70,173); // Blue
+$wspt-colour8: rgb(122,184,0); // Lime
+$wspt-colour9: rgb(0,175,63); // Green
+$wspt-colour10: rgb(0,105,60); // DarkGreen
+$wspt-colour11: rgb(108,77,35); // Brown
 
 /* Components */
 @import 'components/_calendar';
@@ -19,11 +31,11 @@ $sidebar-width: 320px;
 
 * {
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'FF Meta', 'Open Sans', sans-serif;
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'FF Meta', 'Open Sans', sans-serif;
 }
 
 .container {
@@ -55,7 +67,7 @@ body {
 
   &::-webkit-scrollbar {
   	width: 10px;
-  	background-color: #F5F5F5;
+  	background-color: #17265a;
   }
 
   &::-webkit-scrollbar-thumb {
