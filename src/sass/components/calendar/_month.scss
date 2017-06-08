@@ -30,13 +30,13 @@
 }
 
 .rbc-month-view {
-  background-color: #FFF;
   position: relative;
   display: flex;
   flex-direction: column;
   flex: 1 0 0;
   width: 100%;
   user-select: none;
+  border: 1px solid $cell-border;
 
   height: 100%; // ie-fix
 
@@ -112,7 +112,6 @@
   position: absolute;
   z-index: $event-zindex + 1;
   border: 1px solid #e5e5e5;
-  background-color: #fff;
   box-shadow: 0 5px 15px rgba(0,0,0,.25);
   padding: 10px;
 

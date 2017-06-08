@@ -75,7 +75,7 @@ export default class Map extends Component {
         {/* */}
         <div className="map-area">
           <svg
-            viewBox="100 80 800 560"
+            viewBox="100 60 800 560"
             xmlSpace="preserve"
             preserveAspectRatio="xMidYMid meet"
           >

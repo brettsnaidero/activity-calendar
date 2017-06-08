@@ -1,3 +1,17 @@
+.content {
+  padding: 30px;
+  padding: 1.875rem;
+  background-color: #FFF;
+  box-shadow: 0px 0px 20px rgba(82, 108, 203, 0.15);
+  border-radius: 2px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ececec;
+}
+
+/* */
 label {
   color: currentColor;
   display: block;
@@ -26,8 +40,6 @@ ul label,
 input[type="radio"],
 input[type="checkbox"] {
   opacity: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   display: inline-block;
   vertical-align: middle;
@@ -39,7 +51,6 @@ input[type="checkbox"] {
   margin-top: -10px;
   position: absolute;
   cursor: pointer;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -124,4 +135,140 @@ input[type="checkbox"]:checked + label svg {
 input[type="radio"]:checked + label svg {
   transform: scale(1);
   opacity: 1;
+}
+
+/* Fields */
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form > * {
+  width: 100%;
+}
+
+form .field {
+    width: 100%;
+    margin: 12px 0px;
+    margin: 0.75rem 0rem;
+
+    &.half {
+        width: 48.5%;
+        margin-right: 3%;
+
+        &.last {
+            margin-right: 0;
+        }
+    }
+
+    &.third {
+        width: 31.333333%;
+        margin-right: 3%;
+
+        &.last {
+            margin-right: 0;
+        }
+    }
+}
+
+/* Field Labels */
+label {
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #222222;
+  display: block;
+  line-height: 1.2;
+  font-weight: bold;
+  padding: 0 0 10px 0;
+  padding: 0 0 0.75rem 0;
+}
+
+/* Inputs */
+/* Inputs */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="file"],
+textarea {
+    width: 100%;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 20px;
+    line-height: 1.25rem;
+    border: 1px solid #9FAFBA;
+    border-radius: 4px;
+    background-clip: padding-box;
+    padding: 12px;
+    padding: 0.75rem;
+    margin: 0;
+    transition: border 0.5s;
+    appearance: none;
+
+    &:disabled {
+        background-color: #E5EBEF;
+        opacity: 0.5;
+    }
+
+    &.required {
+        border-color: #D34151;
+        box-shadow: 0 0 2px rgba(229, 128, 139, 0.5);
+    }
+
+    &.valid {
+        border-color: #53C74B;
+        box-shadow: 0 0 2px rgba(128, 242, 115, 0.5);
+        color: darkgreen;
+    }
+
+    &.valid:focus,
+    &.required:focus,
+    &:focus {
+        outline: none;
+        border: 1px solid #23b7fb;
+        box-shadow: 0 0 3px rgb(98, 206, 255);
+    }
+
+    /* Placeholder */
+    &::-webkit-input-placeholder { color: #BECAD2; }
+    &:-moz-placeholder { color: #BECAD2; }
+    &::-moz-placeholder { color: #BECAD2; }
+    &:-ms-input-placeholder { color: #BECAD2; }
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+/* Select fields */
+select {
+    color: #222222;
+    height: auto;
+    border-radius: 3px;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 20px;
+    line-height: 1.25rem;
+    outline: none;
+    width: 100%;
+    padding: 12px;
+    padding: 0.75rem;
+    margin: 0;
+    position: relative;
+    border: 1px solid #9FAFBA;
+    box-shadow: 0px 1px 3px rgba(199, 201, 218, 0.15);
+    background: linear-gradient(to bottom, rgba(240,242,244,1) 0%,rgba(231,235,238,1) 100%);
+
+    &:hover {
+        background: linear-gradient(to bottom, rgba(241,243,245,1) 0%,rgba(233,236,239,1) 100%);
+    }
+
+    &.valid:focus,
+    &.required:focus,
+    &:focus {
+        outline: none;
+        border: 1px solid #23b7fb;
+        box-shadow: 0 0 3px rgba(98, 206, 255, 0.5);
+    }
 }

@@ -1,10 +1,10 @@
 .map {
-  height: calc(100vh - #{$header-height} - #{$header-height} - 3rem);
+  height: calc(100vh - #{$header-height} - 40px);
 }
 
 .map-area {
   border: 1px solid rgba(#6a90b8,0.15);
-  height: calc(100vh - #{$header-height} - #{$header-height} - 3rem);
+  height: calc(100vh - #{$header-height} - 40px);
 
   @supports (display: flex) {
     display: flex;
@@ -15,22 +15,28 @@
 
 .map-area svg {
   display: block;
-  height: calc(100vh - #{$header-height} - #{$header-height} - 3rem);
+  height: calc(100vh - #{$header-height} - 40px);
   width: 100%;
 }
 
 .svg--area {
-  fill: #FFF;
+  fill: rgba(#3655CE,0.25);
+  stroke: #FFF;
+  stroke-width: 2px;
   cursor: pointer;
 }
 
-.svg--area:hover {
-  stroke: #181c3a;
+.map-area svg g:hover .svg--area {
+  stroke: #3655CE;
   stroke-width: 3px;
 }
 
+.map-area text {
+  fill: #FFF;
+}
+
 .svg--shadow {
-  fill: rgba(#4780a8,0.5);
+  fill: rgba(#000,0.5);
   filter: url(#glow);
 }
 

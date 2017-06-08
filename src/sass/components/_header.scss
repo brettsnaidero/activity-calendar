@@ -1,7 +1,7 @@
 .header {
   position: relative;
-  background-color: #111c24;
-  background: linear-gradient(to top, #111c24 0%, #19364a 100%);
+  background-color: #3C3EB3;
+  background: linear-gradient(to right, #3655CE 0%, #3C3EB3 100%);
   height: $header-height;
   color: white;
   width: 100%;
@@ -20,10 +20,21 @@
   width: calc(#{$sidebar-width});
   padding: 16px;
   padding: 1rem;
+  background-color: #3655CE;
+  box-shadow: 0px 0px 30px rgba(#3C3EB3,0.75);
+}
+
+.header--logo .tag {
+  font-size: 14px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  text-align: center;
 }
 
 .header--logo img {
-  display: block;
+  display: none;
   max-height: $header-height - 32px;
   width: auto;
   // margin: 0 auto;
@@ -37,7 +48,7 @@
   width: $header-height;
   height: $header-height;
   border: none;
-  background: #0074cd;
+  background: #3655CE;
   cursor: pointer;
   position: relative;
   box-shadow: 0px 0px 20px rgba(71, 128, 168, 0.25);
@@ -82,10 +93,12 @@
   top: 50%;
   margin-top: -$header-height / 4;
   left: 0;
+  background-color: #FFF;
+  border: 1px solid #FFF;
 }
 
 .user-image img {
-  width: $header-height / 2;
-  height: $header-height / 2;
+  width: $header-height / 2 - 2px;
+  height: $header-height / 2 - 2px;
   object-fit: cover;
 }

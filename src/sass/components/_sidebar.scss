@@ -4,15 +4,17 @@
   width: 20%;
   width: calc(#{$sidebar-width});
   float: left;
-  box-shadow: 0px 0px 20px rgba(#526ccb,0.15);
+  box-shadow: 0px 0px 20px rgba(#0d1739,0.75);
   overflow: hidden;
   text-align: left;
   position: relative;
   color: #3a4168;
 
-  @supports (display: flex) {
-    display: flex;
-    flex-direction: column;
+  &.with-top {
+    padding-top: 102px;
+  }
+  &.with-bottom {
+    padding-bottom: 88px;
   }
 }
 
@@ -26,6 +28,10 @@
 .sidebar--top {
   overflow: hidden;
   box-shadow: 0px 0px 20px rgba(#526ccb,0.15);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 
   @supports (display: flex) {
   }
@@ -33,11 +39,29 @@
 
 /* Sidebar Middle */
 .sidebar--main {
-  @supports (display: flex) {
+  height: 100%;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar-track {
+  	background-color: #F5F5F5;
+  }
+
+  &::-webkit-scrollbar {
+  	width: 10px;
+  	background-color: #F5F5F5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+  	border-radius: 6px;
+  	background-color: #0074cd;
   }
 }
 
 .sidebar--main h1 {
+  background: -webkit-linear-gradient(45deg, #576fe6 0%, #9844b7 50%, #ff357f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
   font-weight: bold;
   font-size: 32px;
   font-size: 2rem;
@@ -54,11 +78,16 @@
 
 /* Sidebar Bottom */
 .sidebar--bottom {
-  background: #3a4168;
-  box-shadow: 0px 0px 20px rgba(#4780a8,0.125);
+  background-color: #FFF;
+  box-shadow: 0px 0px 20px rgba(#526ccb,0.35);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 
   @supports (display: flex) {
     margin-top: auto;
+    display: flex;
   }
 }
 

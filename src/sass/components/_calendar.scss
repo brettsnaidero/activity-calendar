@@ -23,13 +23,13 @@ button.rbc-input::-moz-focus-inner {
 }
 
 /* Calendar */
-
 .rbc-calendar {
   box-sizing: border-box;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  color: #FFF;
 }
 
 .rbc-calendar *,

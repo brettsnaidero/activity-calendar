@@ -13,7 +13,6 @@ import MyEvents from './components/MyEvents';
 
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
-import NavigationBar from './components/NavigationBar';
 import OffCanvas from './components/OffCanvas';
 
 import './sass/style.css';
@@ -60,10 +59,7 @@ class App extends Component {
             {/* Main Content Area */}
             <div className="main">
               <div className="main--area">
-                <NavigationBar
-                  config="calendar"
-                />
-
+                
                 <CSSTransitionGroup
                   transitionName="fade"
                   transitionEnterTimeout={300}

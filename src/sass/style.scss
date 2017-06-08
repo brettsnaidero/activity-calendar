@@ -45,7 +45,23 @@ body {
   width: 80%;
   width: calc(100% - #{$sidebar-width});
   float: left;
-  background: #f1f3f5;
+  background: #0d1739;
+  background: linear-gradient(to bottom, #0d1739 0%, #142252 100%);
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar-track {
+  	background-color: #17265a;
+  }
+
+  &::-webkit-scrollbar {
+  	width: 10px;
+  	background-color: #F5F5F5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+  	border-radius: 10px;
+  	background-color: #FFF;
+  }
 }
 
 .main--area {

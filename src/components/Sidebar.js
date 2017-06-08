@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { Switch, Route } from 'react-router';
+import { withRouter, NavLink } from 'react-router-dom';
 
 import { CSSTransitionGroup } from 'react-transition-group';
 
@@ -11,7 +12,9 @@ import MapSidebar from './SidebarComponents/MapSidebar';
 import ScheduleSidebar from './SidebarComponents/ScheduleSidebar';
 import MyEventsSidebar from './SidebarComponents/MyEventsSidebar';
 
-export default class Map extends Component {
+const SomeSidebar = withRouter(props => <Sidebar {...props}/>);
+
+export default class Sidebar extends Component {
   constructor(props) {
     super(props);
 
@@ -21,46 +24,53 @@ export default class Map extends Component {
 
   render() {
     return (
-      <div className="sidebar">
-        {/* Top */}
-        <div className="sidebar--area sidebar--top">
-          <Button
-            type="schedule"
-            label="Schedule an Event"
-          />
+      <Route path="/" render={(props) => (
+        <div className={"sidebar with-bottom " + (props.location.pathname == "/calendar" || props.location.pathname == "/map" ? "with-top" : "no-top")}>
+          {/* Top */}
+          <Switch>
+            <Route path={/\/(map|calendar)/}>
+              <div className="sidebar--area sidebar--top">
+                <Button
+                  type="schedule"
+                  label="Schedule an Event"
+                />
+              </div>
+            </Route>
+          </Switch>
+          {/* Main */}
+          <div className="sidebar--area sidebar--main">
+            <CSSTransitionGroup
+              transitionName="fade"
+              transitionEnterTimeout={300}
+              transitionLeaveTimeout={300}
+            >
+              <Switch>
+                <Route
+                  path="/map"
+                  component={MapSidebar}
+                />
+                <Route
+                  path="/schedule"
+                  component={ScheduleSidebar}
+                />
+                <Route
+                  path="/myevents"
+                  component={MyEventsSidebar}
+                />
+                <Route
+                  path="/"
+                  component={Filters}
+                />
+              </Switch>
+            </CSSTransitionGroup>
+          </div>
+          {/* Bottom */}
+          <div className="sidebar--area sidebar--bottom">
+            <NavLink to="/calendar" className="button button--toggle first">Calendar</NavLink>
+            <NavLink to="/map" className="button button--toggle second">Map</NavLink>
+          </div>
         </div>
-        {/* Main */}
-        <div className="sidebar--area sidebar--main">
-          <CSSTransitionGroup
-            transitionName="fade"
-            transitionEnterTimeout={300}
-            transitionLeaveTimeout={300}
-          >
-            <Switch>
-              <Route
-                path="/map"
-                component={MapSidebar}
-              />
-              <Route
-                path="/schedule"
-                component={ScheduleSidebar}
-              />
-              <Route
-                path="/myevents"
-                component={MyEventsSidebar}
-              />
-              <Route
-                path="/"
-                component={Filters}
-              />
-            </Switch>
-          </CSSTransitionGroup>
-        </div>
-        {/* Bottom
-        <div className="sidebar--area sidebar--bottom">
-        </div>
-        */}
-      </div>
+      )}/>
     );
   }
 };

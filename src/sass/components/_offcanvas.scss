@@ -3,25 +3,27 @@ $menu_width: 200px;
 /* Menu Appearance */
 
 .pushy {
+    padding-top: 72px;
     position: fixed;
     width: $menu_width;
     height: 100%;
     top: 0;
     z-index: 9999;
-    background: #181c3a;
+    background: #FFF;
     overflow: auto;
     // visibility: hidden;
     -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
 
     li {
         display: block;
-        color: #FFFFFF;
+        color: #181c3a;
         padding: 20px;
         padding: 1.25rem;
         text-decoration: none;
         outline: 0;
-        font-size: 24px;
-        font-size: 1.5rem;
+        font-size: 16px;
+        font-size: 1rem;
+        border-bottom: 1px solid #222;
     }
 
     a:hover{
@@ -203,28 +205,21 @@ $menu_width: 200px;
 .pushy .close {
   cursor: pointer;
   border: none;
-    display: block;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    white-space: nowrap;
-    text-indent: 100%;
-    overflow: hidden;
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    padding: 0;
-    background: rgba(0,0,0,0.1);
-    -ms-transform: rotate(45deg);
-    /* IE 9 */
-    -webkit-transform: rotate(45deg);
-    /* Chrome, Safari, Opera */
-    transform: rotate(45deg);
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  white-space: nowrap;
+  text-indent: 100%;
+  overflow: hidden;
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  background: #3655CE;
 }
 
 .pushy .close:hover,
 .pushy .close:focus {
-  background: #0493D8;
 }
 
 .pushy .close:focus {

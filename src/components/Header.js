@@ -17,6 +17,7 @@ export default class Header extends Component {
       <header className="header">
         <div className="header--logo">
           <img src={logo} alt="Logo" />
+          <div className="tag">Activity Calendar</div>
         </div>
         <div className="header--user">
           <div className="user-image">
