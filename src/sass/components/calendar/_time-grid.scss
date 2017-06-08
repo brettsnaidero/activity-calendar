@@ -77,9 +77,23 @@
   flex: 1 0 0%;
   align-items: flex-start;
   width: 100%;
-  border-top: 2px solid $calendar-border;
+  // border-top: 2px solid $calendar-border;
   overflow-y: auto;
   position: relative;
+
+  &::-webkit-scrollbar-track {
+  	background-color: #17265a;
+  }
+
+  &::-webkit-scrollbar {
+  	width: 10px;
+  	background-color: #F5F5F5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+  	border-radius: 10px;
+  	background-color: #0074cd;
+  }
 
   > .rbc-time-gutter {
     flex: none;

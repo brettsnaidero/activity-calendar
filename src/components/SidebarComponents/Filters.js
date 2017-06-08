@@ -13,6 +13,10 @@ export default class Filters extends Component {
     }
   }
 
+  toggleEvent() {
+    
+  }
+
   eventTypeFilters() {
     return (
       <ul className="optionset checkboxset">
@@ -40,6 +44,10 @@ export default class Filters extends Component {
         })}
       </ul>
     )
+  }
+
+  toggleLocation() {
+
   }
 
   locationFilters() {
