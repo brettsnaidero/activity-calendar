@@ -61,7 +61,7 @@
   background: -webkit-linear-gradient(45deg, #576fe6 0%, #9844b7 50%, #ff357f 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
+
   font-weight: bold;
   font-size: 32px;
   font-size: 2rem;
@@ -74,6 +74,16 @@
 
 .sidebar--main h3:first-of-type {
   margin-top: 0;
+}
+
+.sidebar--main h3 a {
+  color: #3655CE;
+  text-decoration: none;
+}
+
+.sidebar--main h3 a:hover,
+.sidebar--main h3 a:focus {
+  color: #ff357f;
 }
 
 /* Sidebar Bottom */

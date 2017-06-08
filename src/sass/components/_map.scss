@@ -3,7 +3,6 @@
 }
 
 .map-area {
-  border: 1px solid rgba(#6a90b8,0.15);
   height: calc(100vh - #{$header-height} - 40px);
 
   @supports (display: flex) {
@@ -20,7 +19,7 @@
 }
 
 .svg--area {
-  fill: rgba(#3655CE,0.25);
+  fill: #49953b;
   stroke: #FFF;
   stroke-width: 2px;
   cursor: pointer;
@@ -33,6 +32,13 @@
 
 .map-area text {
   fill: #FFF;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.5s opacity ease;
+}
+
+.map-area svg g:hover text {
+  opacity: 1;
 }
 
 .svg--shadow {

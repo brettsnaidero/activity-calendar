@@ -499,7 +499,6 @@ button.rbc-input::-moz-focus-inner {
   height: calc(100vh - 72px - 40px); }
 
 .map-area {
-  border: 1px solid rgba(106, 144, 184, 0.15);
   height: calc(100vh - 72px - 40px); }
   @supports (display: flex) {
     .map-area {
@@ -513,7 +512,7 @@ button.rbc-input::-moz-focus-inner {
   width: 100%; }
 
 .svg--area {
-  fill: rgba(54, 85, 206, 0.25);
+  fill: #49953b;
   stroke: #FFF;
   stroke-width: 2px;
   cursor: pointer; }
@@ -523,7 +522,13 @@ button.rbc-input::-moz-focus-inner {
   stroke-width: 3px; }
 
 .map-area text {
-  fill: #FFF; }
+  fill: #FFF;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.5s opacity ease; }
+
+.map-area svg g:hover text {
+  opacity: 1; }
 
 .svg--shadow {
   fill: rgba(0, 0, 0, 0.5);
@@ -617,6 +622,14 @@ button.rbc-input::-moz-focus-inner {
 .sidebar--main h3:first-of-type {
   margin-top: 0; }
 
+.sidebar--main h3 a {
+  color: #3655CE;
+  text-decoration: none; }
+
+.sidebar--main h3 a:hover,
+.sidebar--main h3 a:focus {
+  color: #ff357f; }
+
 /* Sidebar Bottom */
 .sidebar--bottom {
   background-color: #FFF;
@@ -650,8 +663,7 @@ button.rbc-input::-moz-focus-inner {
   color: white;
   width: 100%;
   position: relative;
-  z-index: 2;
-  overflow: hidden; }
+  z-index: 2; }
   @supports (display: flex) {
     .header {
       display: flex; } }
@@ -685,8 +697,7 @@ button.rbc-input::-moz-focus-inner {
   border: none;
   background: #3655CE;
   cursor: pointer;
-  position: relative;
-  box-shadow: 0px 0px 20px rgba(71, 128, 168, 0.25); }
+  position: relative; }
   .menu-btn svg {
     display: block;
     width: 24px;
@@ -704,14 +715,69 @@ button.rbc-input::-moz-focus-inner {
 .header--user {
   padding: 18px;
   line-height: 36px;
-  padding-left: 46px;
+  padding-left: 56px;
+  padding-right: 36px;
   position: relative;
   color: #FFF;
   font-size: 14px;
-  font-size: 0.875rem; }
+  font-size: 0.875rem;
+  cursor: pointer; }
+  .header--user:hover:after {
+    border-top-color: #FFF; }
+  .header--user:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    margin-top: -2px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4px 4px 0 4px;
+    border-color: rgba(255, 255, 255, 0.5) transparent transparent transparent; }
   @supports (display: flex) {
     .header--user {
       margin-left: auto; } }
+  .header--user .dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s opacity ease; }
+  .header--user.open .dropdown {
+    opacity: 1;
+    visibility: visible; }
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 10px;
+  background-color: #FFF;
+  border-radius: 3px;
+  box-shadow: 0px 0px 20px rgba(13, 23, 57, 0.25);
+  width: 220px;
+  margin-top: -4px; }
+  .dropdown:before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 4px 4px 4px;
+    border-color: transparent transparent #FFF transparent; }
+
+.dropdown li:not(:first-child) {
+  border-top: 1px solid #e6e6e6; }
+
+.dropdown a {
+  line-height: 1.2;
+  display: block;
+  padding: 10px;
+  padding: 0.75rem;
+  color: #3a4168;
+  text-decoration: none; }
+  .dropdown a:hover, .dropdown a:focus {
+    color: #ff357f; }
 
 .user-image {
   width: 36px;
@@ -722,7 +788,7 @@ button.rbc-input::-moz-focus-inner {
   position: absolute;
   top: 50%;
   margin-top: -18px;
-  left: 0;
+  left: 10px;
   background-color: #FFF;
   border: 1px solid #FFF; }
 
@@ -733,7 +799,6 @@ button.rbc-input::-moz-focus-inner {
 
 /* Menu Appearance */
 .pushy {
-  padding-top: 72px;
   position: fixed;
   width: 200px;
   height: 100%;
@@ -745,14 +810,14 @@ button.rbc-input::-moz-focus-inner {
   /* enables momentum scrolling in iOS overflow elements */ }
   .pushy li {
     display: block;
-    color: #181c3a;
+    color: #27282d;
     padding: 20px;
     padding: 1.25rem;
     text-decoration: none;
     outline: 0;
     font-size: 16px;
     font-size: 1rem;
-    border-bottom: 1px solid #222; }
+    border-bottom: 1px solid #e6e6e6; }
   .pushy a:hover {
     background-color: #0493D8; }
   .pushy ul:first-child {
@@ -883,7 +948,7 @@ button.rbc-input::-moz-focus-inner {
   display: block;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 100%;
   white-space: nowrap;
   text-indent: 100%;
   overflow: hidden;
@@ -935,7 +1000,7 @@ button.rbc-input::-moz-focus-inner {
 .button--schedule {
   background: linear-gradient(45deg, #3bade3 0%, #576fe6 25%, #9844b7 51%, #ff357f 100%);
   background: linear-gradient(45deg, #576fe6 0%, #9844b7 50%, #ff357f 100%);
-  border: 3px solid #FFF;
+  border: 2px solid #FFF;
   padding: 20px;
   padding: 1.25rem;
   width: 100%; }
@@ -1303,6 +1368,7 @@ h2 {
   margin: 0 0 1rem 0; }
 
 h3 {
+  color: #3C3EB3;
   font-weight: bold; }
 
 p {

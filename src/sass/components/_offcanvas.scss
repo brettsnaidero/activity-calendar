@@ -3,7 +3,6 @@ $menu_width: 200px;
 /* Menu Appearance */
 
 .pushy {
-    padding-top: 72px;
     position: fixed;
     width: $menu_width;
     height: 100%;
@@ -16,14 +15,14 @@ $menu_width: 200px;
 
     li {
         display: block;
-        color: #181c3a;
+        color: #27282d;
         padding: 20px;
         padding: 1.25rem;
         text-decoration: none;
         outline: 0;
         font-size: 16px;
         font-size: 1rem;
-        border-bottom: 1px solid #222;
+        border-bottom: 1px solid #e6e6e6;
     }
 
     a:hover{
@@ -208,7 +207,7 @@ $menu_width: 200px;
   display: block;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 100%;
   white-space: nowrap;
   text-indent: 100%;
   overflow: hidden;

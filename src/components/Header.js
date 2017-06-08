@@ -8,7 +8,22 @@ export default class Header extends Component {
   constructor(props) {
     super(props);
 
+    this.openDropdown = this.openDropdown.bind(this);
+
     this.state = {
+      userDropDown: 'closed'
+    }
+  }
+
+  openDropdown() {
+    if(this.state.userDropDown == 'closed') {
+      this.setState({
+        userDropDown: 'open'
+      });
+    } else {
+      this.setState({
+        userDropDown: 'closed'
+      });
     }
   }
 
@@ -19,12 +34,23 @@ export default class Header extends Component {
           <img src={logo} alt="Logo" />
           <div className="tag">Activity Calendar</div>
         </div>
-        <div className="header--user">
+        <div
+          className={`header--user ${this.state.userDropDown}`}
+          onClick={this.openDropdown}
+        >
           <div className="user-image">
             <img src={avatar} alt="User avatar" />
           </div>
           <div>
             Hello, UserName
+          </div>
+
+          {/* Dropdown */}
+          <div className="dropdown">
+            <ul>
+              <li><a href="#" title="">Sign Out</a></li>
+              <li><a href="#" title="">My Events</a></li>
+            </ul>
           </div>
         </div>
         <div className="header--controls">
