@@ -81,7 +81,8 @@ button.rbc-input::-moz-focus-inner {
   direction: rtl; }
 
 .rbc-off-range {
-  color: #b3b3b3; }
+  color: rgba(255, 255, 255, 0.5);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, transparent 100%); }
 
 .rbc-header {
   overflow: hidden;
@@ -99,7 +100,11 @@ button.rbc-input::-moz-focus-inner {
     text-decoration: none; }
 
 .rbc-row-content {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   user-select: none;
   z-index: 4; }
 
@@ -234,7 +239,14 @@ button.rbc-input::-moz-focus-inner {
 
 .rbc-row {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  /*
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  */ }
 
 .rbc-row-segment {
   padding: 0 1px 1px 1px; }
@@ -243,13 +255,18 @@ button.rbc-input::-moz-focus-inner {
   background-color: rgba(0, 0, 0, 0.1); }
 
 .rbc-show-more {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: white;
   z-index: 4;
   font-weight: bold;
-  font-size: 85%;
+  font-size: 12px;
+  font-size: 0.75rem;
   height: auto;
   line-height: normal;
-  white-space: nowrap; }
+  white-space: nowrap;
+  padding: 0px 5px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #3C3EB3; }
 
 .rbc-month-view {
   position: relative;
@@ -258,7 +275,7 @@ button.rbc-input::-moz-focus-inner {
   flex: 1 0 0;
   width: 100%;
   user-select: none;
-  border: 1px solid #192a6c;
+  border: 1px solid #22388c;
   height: 100%; }
   .rbc-month-view .rbc-header {
     border-bottom: 1px solid #192a6c; }
@@ -308,6 +325,7 @@ button.rbc-input::-moz-focus-inner {
 .rbc-overlay {
   position: absolute;
   z-index: 5;
+  background-color: #142252;
   border: 1px solid #e5e5e5;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
   padding: 10px; }
@@ -324,6 +342,14 @@ button.rbc-input::-moz-focus-inner {
   flex-direction: column;
   flex: 1 0 0;
   overflow: auto; }
+  .rbc-agenda-view::-webkit-scrollbar-track {
+    background-color: #17265a; }
+  .rbc-agenda-view::-webkit-scrollbar {
+    width: 10px;
+    background-color: #17265a; }
+  .rbc-agenda-view::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #0046ad; }
   .rbc-agenda-view table {
     width: 100%;
     border: 1px solid #192a6c; }
@@ -381,7 +407,9 @@ button.rbc-input::-moz-focus-inner {
   flex: none; }
 
 .rbc-label {
-  padding: 0 5px; }
+  padding: 0 5px;
+  font-size: 14px;
+  font-size: 0.875rem; }
 
 .rbc-day-slot {
   position: relative; }
@@ -432,7 +460,7 @@ button.rbc-input::-moz-focus-inner {
   flex-direction: column;
   flex: 1;
   width: 100%;
-  border: 1px solid #192a6c;
+  border: 1px solid #22388c;
   min-height: 0; }
   .rbc-time-view .rbc-time-gutter {
     white-space: nowrap; }

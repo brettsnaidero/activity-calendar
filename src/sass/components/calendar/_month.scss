@@ -2,6 +2,13 @@
 .rbc-row {
   display: flex;
   flex-direction: row;
+  /*
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  */
 }
 
 .rbc-row-segment {
@@ -20,13 +27,18 @@
 .rbc-show-more {
   // @extend(.rbc-ellipsis);
 
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 1);
   z-index: $event-zindex;
   font-weight: bold;
-  font-size: 85%;
+  font-size: 12px;
+  font-size: 0.75rem;
   height: auto;
   line-height: normal;
   white-space: nowrap;
+  padding: 0px 5px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #3C3EB3;
 }
 
 .rbc-month-view {
@@ -36,7 +48,7 @@
   flex: 1 0 0;
   width: 100%;
   user-select: none;
-  border: 1px solid $calendar-border;
+  border: 1px solid #22388c;
 
   height: 100%; // ie-fix
 
@@ -112,6 +124,7 @@
 .rbc-overlay {
   position: absolute;
   z-index: $event-zindex + 1;
+  background-color: #142252;
   border: 1px solid #e5e5e5;
   box-shadow: 0 5px 15px rgba(0,0,0,.25);
   padding: 10px;

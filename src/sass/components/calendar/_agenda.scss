@@ -5,6 +5,20 @@
   flex: 1 0 0;
   overflow: auto;
 
+  &::-webkit-scrollbar-track {
+  	background-color: #17265a;
+  }
+
+  &::-webkit-scrollbar {
+  	width: 10px;
+  	background-color: #17265a;
+  }
+
+  &::-webkit-scrollbar-thumb {
+  	border-radius: 10px;
+  	background-color: $wspt-colour7;
+  }
+
   table {
     width: 100%;
     border: 1px solid $cell-border;
