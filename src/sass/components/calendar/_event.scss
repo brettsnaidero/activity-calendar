@@ -4,6 +4,8 @@
   background-color: $event-bg;
   border-radius: $event-border-radius;
   color: $event-color;
+  font-size: 14px;
+  font-size: 0.85rem;
 
   &.rbc-selected {
     background-color: darken($event-bg, 10%);
@@ -11,9 +13,35 @@
 
   &.typea-class {
     background-color: #34923f;
+    background: linear-gradient(to bottom, #34923f 0%, darken(#34923f,5%) 100%);
+
+    &:hover {
+      background: #34923f;
+    }
   }
   &.typeb-class {
-    background-color: #b352cc;
+    background-color: #9239c3;
+    background: linear-gradient(to bottom, #9239c3 0%, darken(#9239c3,5%) 100%);
+
+    &:hover {
+      background: #9239c3;
+    }
+  }
+  &.typec-class {
+    background-color: #d82789;
+    background: linear-gradient(to bottom, #d82789 0%, darken(#d82789,5%) 100%);
+
+    &:hover {
+      background: #d82789;
+    }
+  }
+  &.typed-class {
+    background-color: #f1992c;
+    background: linear-gradient(to bottom, #f1992c 0%, darken(#f1992c,5%) 100%);
+
+    &:hover {
+      background: #f1992c;
+    }
   }
 }
 

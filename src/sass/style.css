@@ -178,16 +178,34 @@ button.rbc-input::-moz-focus-inner {
 
 .rbc-event {
   cursor: pointer;
-  padding: 2px 5px;
+  padding: 3px 5px;
   background-color: #0074cd;
-  border-radius: 5px;
-  color: #fff; }
+  border-radius: 3px;
+  color: #fff;
+  font-size: 14px;
+  font-size: 0.85rem; }
   .rbc-event.rbc-selected {
     background-color: #00579a; }
   .rbc-event.typea-class {
-    background-color: #34923f; }
+    background-color: #34923f;
+    background: linear-gradient(to bottom, #34923f 0%, #2d7f37 100%); }
+    .rbc-event.typea-class:hover {
+      background: #34923f; }
   .rbc-event.typeb-class {
-    background-color: #b352cc; }
+    background-color: #9239c3;
+    background: linear-gradient(to bottom, #9239c3 0%, #8333af 100%); }
+    .rbc-event.typeb-class:hover {
+      background: #9239c3; }
+  .rbc-event.typec-class {
+    background-color: #d82789;
+    background: linear-gradient(to bottom, #d82789 0%, #c2237b 100%); }
+    .rbc-event.typec-class:hover {
+      background: #d82789; }
+  .rbc-event.typed-class {
+    background-color: #f1992c;
+    background: linear-gradient(to bottom, #f1992c 0%, #ef8d14 100%); }
+    .rbc-event.typed-class:hover {
+      background: #f1992c; }
 
 .rbc-event-label {
   font-size: 80%; }
@@ -240,12 +258,12 @@ button.rbc-input::-moz-focus-inner {
   border: 1px solid #3655CE;
   height: 100%; }
   .rbc-month-view .rbc-header {
-    border-bottom: 1px solid #3655CE; }
+    border-bottom: 1px solid #192a6c; }
   .rbc-month-view .rbc-header + .rbc-header {
-    border-left: 1px solid #3655CE; }
+    border-left: 1px solid #192a6c; }
   .rbc-rtl .rbc-month-view .rbc-header + .rbc-header {
     border-left-width: 0;
-    border-right: 1px solid #3655CE; }
+    border-right: 1px solid #192a6c; }
 
 .rbc-month-header {
   display: flex;
@@ -259,10 +277,11 @@ button.rbc-input::-moz-focus-inner {
   overflow: hidden;
   height: 100%; }
   .rbc-month-row + .rbc-month-row {
-    border-top: 1px solid #3655CE; }
+    border-top: 1px solid #192a6c; }
 
 .rbc-date-cell {
-  padding-right: 5px;
+  padding: 10px;
+  padding: 0.75rem;
   text-align: right; }
   .rbc-date-cell.rbc-now {
     font-weight: bold; }
@@ -277,11 +296,11 @@ button.rbc-input::-moz-focus-inner {
   overflow: hidden; }
 
 .rbc-day-bg + .rbc-day-bg {
-  border-left: 1px solid #3655CE; }
+  border-left: 1px solid #192a6c; }
 
 .rbc-rtl .rbc-day-bg + .rbc-day-bg {
   border-left-width: 0;
-  border-right: 1px solid #3655CE; }
+  border-right: 1px solid #192a6c; }
 
 .rbc-overlay {
   position: absolute;
@@ -304,7 +323,7 @@ button.rbc-input::-moz-focus-inner {
   overflow: auto; }
   .rbc-agenda-view table {
     width: 100%;
-    border: 1px solid #3655CE; }
+    border: 1px solid #192a6c; }
     .rbc-agenda-view table tbody > tr > td {
       padding: 5px 10px;
       vertical-align: top; }
@@ -313,16 +332,16 @@ button.rbc-input::-moz-focus-inner {
       padding-right: 15px;
       text-transform: lowercase; }
     .rbc-agenda-view table tbody > tr > td + td {
-      border-left: 1px solid #3655CE; }
+      border-left: 1px solid #192a6c; }
     .rbc-rtl .rbc-agenda-view table tbody > tr > td + td {
       border-left-width: 0;
-      border-right: 1px solid #3655CE; }
+      border-right: 1px solid #192a6c; }
     .rbc-agenda-view table tbody > tr + tr {
-      border-top: 1px solid #3655CE; }
+      border-top: 1px solid #192a6c; }
     .rbc-agenda-view table thead > tr > th {
       padding: 3px 5px;
       text-align: left;
-      border-bottom: 1px solid #3655CE; }
+      border-bottom: 1px solid #192a6c; }
       .rbc-rtl .rbc-agenda-view table thead > tr > th {
         text-align: right; }
 
@@ -348,7 +367,7 @@ button.rbc-input::-moz-focus-inner {
     flex: 1; }
 
 .rbc-timeslot-group {
-  border-bottom: 1px solid #3655CE;
+  border-bottom: 1px solid #192a6c;
   min-height: 40px;
   display: flex;
   flex-flow: column nowrap; }
@@ -363,7 +382,7 @@ button.rbc-input::-moz-focus-inner {
 .rbc-day-slot {
   position: relative; }
   .rbc-day-slot .rbc-event {
-    border: 1px solid #265985;
+    border: 1px solid #192a6c;
     display: flex;
     max-height: 100%;
     flex-flow: column wrap;
@@ -381,7 +400,7 @@ button.rbc-input::-moz-focus-inner {
     height: 100%;
     min-height: 1em; }
   .rbc-day-slot .rbc-time-slot {
-    border-top: 1px solid #5f78d8; }
+    border-top: 1px solid #233a95; }
 
 .rbc-time-slot {
   flex: 1 0 0; }
@@ -427,17 +446,17 @@ button.rbc-input::-moz-focus-inner {
   flex: 0 0 auto;
   flex-direction: column; }
   .rbc-time-header.rbc-overflowing {
-    border-right: 1px solid #3655CE; }
+    border-right: 1px solid #192a6c; }
   .rbc-rtl .rbc-time-header.rbc-overflowing {
     border-right-width: 0;
-    border-left: 1px solid #3655CE; }
+    border-left: 1px solid #192a6c; }
   .rbc-time-header > .rbc-row > * + * {
-    border-left: 1px solid #3655CE; }
+    border-left: 1px solid #192a6c; }
   .rbc-rtl .rbc-time-header > .rbc-row > * + * {
     border-left-width: 0;
-    border-right: 1px solid #3655CE; }
+    border-right: 1px solid #192a6c; }
   .rbc-time-header > .rbc-row:first-child {
-    border-bottom: 1px solid #3655CE; }
+    border-bottom: 1px solid #192a6c; }
   .rbc-time-header .rbc-gutter-cell {
     flex: none; }
   .rbc-time-header > .rbc-gutter-cell + * {
@@ -454,10 +473,10 @@ button.rbc-input::-moz-focus-inner {
   .rbc-time-content > .rbc-time-gutter {
     flex: none; }
   .rbc-time-content > * + * > * {
-    border-left: 1px solid #3655CE; }
+    border-left: 1px solid #192a6c; }
   .rbc-rtl .rbc-time-content > * + * > * {
     border-left-width: 0;
-    border-right: 1px solid #3655CE; }
+    border-right: 1px solid #192a6c; }
   .rbc-time-content > .rbc-day-slot {
     width: 100%;
     user-select: none; }
@@ -485,7 +504,7 @@ button.rbc-input::-moz-focus-inner {
 
 /* Brett */
 .calendar {
-  height: calc(100vh - 160px); }
+  height: calc(100vh - 72px - 40px); }
 
 .rbc-abs-full, .rbc-row-bg {
   overflow: hidden;
@@ -663,7 +682,8 @@ button.rbc-input::-moz-focus-inner {
   color: white;
   width: 100%;
   position: relative;
-  z-index: 2; }
+  z-index: 2;
+  box-shadow: 0px 0px 20px rgba(13, 23, 57, 0.35); }
   @supports (display: flex) {
     .header {
       display: flex; } }
@@ -673,9 +693,7 @@ button.rbc-input::-moz-focus-inner {
   width: 20%;
   width: calc(320px);
   padding: 16px;
-  padding: 1rem;
-  background-color: #3655CE;
-  box-shadow: 0px 0px 30px rgba(60, 62, 179, 0.75); }
+  padding: 1rem; }
 
 .header--logo .tag {
   font-size: 14px;
@@ -1092,10 +1110,14 @@ label {
   display: block;
   cursor: pointer; }
 
+label span {
+  float: right;
+  opacity: 0.5; }
+
 ul.optionset li {
   list-style: none;
-  margin: 20px 0;
-  margin: 1.25rem 0;
+  margin: 16px 0;
+  margin: 1rem 0;
   position: relative; }
 
 .field.checkbox {
@@ -1106,7 +1128,8 @@ ul label,
 .field.checkbox label {
   float: none;
   text-align: left;
-  padding: 0 0 0 30px; }
+  padding: 0 0 0 28px;
+  padding: 0 0 0 1.75rem; }
 
 input[type="radio"],
 input[type="checkbox"] {
@@ -1117,9 +1140,8 @@ input[type="checkbox"] {
   z-index: 100;
   width: 20px;
   height: 20px;
-  top: 50%;
+  top: -2px;
   left: 0;
-  margin-top: -10px;
   position: absolute;
   cursor: pointer;
   box-sizing: border-box; }
@@ -1133,9 +1155,8 @@ input[type="radio"],
 input[type="checkbox"] {
   width: 20px;
   height: 20px;
-  top: 50%;
+  top: -2px;
   left: 0;
-  margin-top: -10px;
   position: absolute;
   cursor: pointer;
   box-sizing: border-box; }
@@ -1154,14 +1175,20 @@ ul.optionset li label::before {
 ul.optionset.checkboxset li label::before {
   border-radius: 3px; }
 
+/* Sub */
+ul.sub {
+  padding-left: 20px;
+  padding-left: 1.25rem;
+  display: none; }
+
 /* Tick or Marker */
 input[type="checkbox"] + label svg,
 input[type="radio"] + label svg {
   width: 16px;
   height: 16px;
-  top: 50%;
+  top: -2px;
   left: 2px;
-  margin-top: -8px;
+  margin-top: 2px;
   position: absolute;
   cursor: pointer; }
 
@@ -1400,7 +1427,7 @@ body {
   width: calc(100% - 320px);
   float: left;
   background: #0d1739;
-  background: linear-gradient(to bottom, #0d1739 0%, #142252 100%);
+  background: linear-gradient(to bottom, #142252 0%, #142252 100%);
   overflow-y: scroll; }
   .main::-webkit-scrollbar-track {
     background-color: #17265a; }

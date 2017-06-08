@@ -2,7 +2,7 @@
 $out-of-range-color: lighten(#333, 50%);
 
 $calendar-border: #3655CE;
-$cell-border: #3655CE;
+$cell-border: #192a6c;
 
 $border-color: #3655CE;
 
@@ -14,10 +14,10 @@ $date-selection-bg-color: rgba(0,0,0, .10);
 
 
 $event-bg: #0074cd;
-$event-border: darken(#3174ad, 10%);
+$event-border: #192a6c;
 $event-color: #fff;
-$event-border-radius: 5px;
-$event-padding: 2px 5px;
+$event-border-radius: 3px;
+$event-padding: 3px 5px;
 $event-zindex: 4;
 
 $btn-color: #FFF;

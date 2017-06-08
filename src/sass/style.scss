@@ -46,7 +46,7 @@ body {
   width: calc(100% - #{$sidebar-width});
   float: left;
   background: #0d1739;
-  background: linear-gradient(to bottom, #0d1739 0%, #142252 100%);
+  background: linear-gradient(to bottom, #142252 0%, #142252 100%);
   overflow-y: scroll;
 
   &::-webkit-scrollbar-track {
