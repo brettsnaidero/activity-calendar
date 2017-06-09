@@ -17,7 +17,7 @@ export default class Header extends Component {
   }
 
   openDropdown() {
-    if(this.state.userDropDown == 'closed') {
+    if(this.state.userDropDown === 'closed') {
       this.setState({
         userDropDown: 'open'
       });

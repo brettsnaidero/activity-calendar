@@ -26,8 +26,10 @@ export default class Calendar extends Component {
       console.log("handleSelectSlot: " + start + " - " + end);
   }
 
-  handleSelectEvent() {
-
+  handleSelectEvent(event) {
+    // console.log(this);
+    // Open event details page
+    // this.props.history.push(event.id);
   }
 
   EventWeek(props) {
@@ -55,7 +57,7 @@ export default class Calendar extends Component {
           events={this.state.events}
           onSelectSlot={this.handleSelectSlot}
           onSelectEvent={this.handleSelectEvent}
-          eventPropGetter={e => ({ className: `${e.class}-class` })} 
+          eventPropGetter={e => ({ className: `${e.class}-class` })}
           components={{
             event: this.EventWeek,
             agenda: {

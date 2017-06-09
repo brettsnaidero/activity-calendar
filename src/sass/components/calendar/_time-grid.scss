@@ -41,6 +41,8 @@
   display: flex;
   flex: 0 0 auto; // should not shrink below height
   flex-direction: column;
+  border-bottom: 1px solid $dark-cell-border;
+  box-shadow: 0px 1px 10px rgba(0,0,0,0.25);
 
   &.rbc-overflowing {
     border-right: 1px solid $cell-border;
@@ -52,7 +54,7 @@
   }
 
   > .rbc-row > * + * {
-    border-left: 1px solid $dark-cell-border; 
+    border-left: 1px solid $dark-cell-border;
   }
 
   .rbc-rtl & > .rbc-row > * + * {

@@ -12,8 +12,6 @@ import MapSidebar from './SidebarComponents/MapSidebar';
 import ScheduleSidebar from './SidebarComponents/ScheduleSidebar';
 import MyEventsSidebar from './SidebarComponents/MyEventsSidebar';
 
-const SomeSidebar = withRouter(props => <Sidebar {...props}/>);
-
 export default class Sidebar extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +22,7 @@ export default class Sidebar extends Component {
 
   render() {
     return (
-      <Route path="/" render={(props) => (
+      <Route path="/" render={ (props) => (
         <div className={"sidebar with-bottom " + (props.location.pathname === "/calendar" || props.location.pathname === "/map" || props.location.pathname === "/" ? "with-top" : "no-top")}>
           {/* Top */}
           <Switch>
