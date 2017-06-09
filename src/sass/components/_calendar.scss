@@ -60,7 +60,6 @@ button.rbc-input::-moz-focus-inner {
 
 .rbc-off-range {
   color: $out-of-range-color;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
 }
 
 .rbc-header {
@@ -74,6 +73,8 @@ button.rbc-input::-moz-focus-inner {
   text-transform: uppercase;
   font-size: 90%;
   min-height: 0;
+  background: #0046ad;
+  color: #FFF;
 
   > a {
     &, &:active, &:visited {
@@ -94,7 +95,7 @@ button.rbc-input::-moz-focus-inner {
 }
 
 .rbc-today {
-  background-color: $today-highlight-bg;
+  // background-color: $today-highlight-bg;
 }
 
 @import './calendar/_toolbar';
@@ -106,7 +107,7 @@ button.rbc-input::-moz-focus-inner {
 
 /* Brett */
 .calendar {
-  height: calc(100vh - #{$header-height} - 40px);
+  height: calc(100vh - #{$header-height} - 64px);
 }
 
 .rbc-abs-full, .rbc-row-bg {

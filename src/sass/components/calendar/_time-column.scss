@@ -16,6 +16,16 @@
   flex-flow: column nowrap;
 }
 
+.rbc-header-gutter,
+.rbc-time-gutter {
+  background-color: #0046ad;
+  color: #FFF;
+}
+
+.rbc-time-gutter .rbc-timeslot-group {
+  border-left-color: #0046ad;
+}
+
 .rbc-time-gutter,
 .rbc-header-gutter {
   flex: none;

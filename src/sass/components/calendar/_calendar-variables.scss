@@ -2,9 +2,10 @@
 $out-of-range-color: rgba(255,255,255,0.5);
 
 $calendar-border: #192a6c;
-$cell-border: #192a6c;
+$dark-cell-border: darken(#0046ad,10%);
+$cell-border: #c4d0e2;
 
-$border-color: #3655CE;
+$border-color: darken(#0046ad,10%);
 
 $segment-width: percentage(1 / 7);
 

@@ -14,7 +14,7 @@ export default class Filters extends Component {
   }
 
   toggleEvent() {
-    
+
   }
 
   eventTypeFilters() {
@@ -31,7 +31,7 @@ export default class Filters extends Component {
         </li>
         { eventTypes.map( (item, index) => {
           return (
-            <li>
+            <li key={index}>
               <input id={item.id} className="checkbox" name={item.id} type="checkbox" value={item.id} />
               <label htmlFor={item.id}>
                 <svg viewBox="0 0 10 10">

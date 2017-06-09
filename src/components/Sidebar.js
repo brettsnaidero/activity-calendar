@@ -25,10 +25,26 @@ export default class Sidebar extends Component {
   render() {
     return (
       <Route path="/" render={(props) => (
-        <div className={"sidebar with-bottom " + (props.location.pathname == "/calendar" || props.location.pathname == "/map" ? "with-top" : "no-top")}>
+        <div className={"sidebar with-bottom " + (props.location.pathname === "/calendar" || props.location.pathname === "/map" || props.location.pathname === "/" ? "with-top" : "no-top")}>
           {/* Top */}
           <Switch>
-            <Route path={/\/(map|calendar)/}>
+            <Route path="/map">
+              <div className="sidebar--area sidebar--top">
+                <Button
+                  type="schedule"
+                  label="Schedule an Event"
+                />
+              </div>
+            </Route>
+            <Route path="/calendar">
+              <div className="sidebar--area sidebar--top">
+                <Button
+                  type="schedule"
+                  label="Schedule an Event"
+                />
+              </div>
+            </Route>
+            <Route path="/" exact>
               <div className="sidebar--area sidebar--top">
                 <Button
                   type="schedule"

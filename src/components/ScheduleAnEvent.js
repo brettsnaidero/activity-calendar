@@ -65,7 +65,7 @@ export default class ScheduleAnEvent extends Component {
             </select>
           </div>
 
-          <div className="field requriedField half last">
+          <div className="field requiredField half last">
             <label>Activity / Title</label>
             <select>
               <option>1</option>
@@ -73,7 +73,7 @@ export default class ScheduleAnEvent extends Component {
             {/* Validation Message */}
           </div>
 
-          <div className="field requriedField half">
+          <div className="field requiredField half">
             <label>Number of Attendees</label>
             <select>
               <option>1</option>
@@ -81,7 +81,7 @@ export default class ScheduleAnEvent extends Component {
             {/* Validation Message */}
           </div>
 
-          <div className="field requriedField half last">
+          <div className="field requiredField half last">
             <label>Precinct</label>
             <select>
               <option>1</option>
@@ -89,7 +89,7 @@ export default class ScheduleAnEvent extends Component {
             {/* Validation Message */}
           </div>
 
-          <div className="field requriedField half">
+          <div className="field requiredField half">
             <label>Location</label>
             <select>
               <option>1</option>
@@ -97,7 +97,7 @@ export default class ScheduleAnEvent extends Component {
             {/* Validation Message */}
           </div>
 
-          <div className="field requriedField half last">
+          <div className="field requiredField half last">
             <label>Site</label>
             <select>
               <option>1</option>

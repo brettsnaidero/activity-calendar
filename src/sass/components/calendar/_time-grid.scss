@@ -13,7 +13,8 @@
   flex-direction: column;
   flex: 1;
   width: 100%;
-  border: 1px solid #22388c;
+  background-color: #FFF;
+  color: #30417b;
   min-height: 0;
 
   .rbc-time-gutter {
@@ -51,7 +52,7 @@
   }
 
   > .rbc-row > * + * {
-    border-left: 1px solid $cell-border;
+    border-left: 1px solid $dark-cell-border; 
   }
 
   .rbc-rtl & > .rbc-row > * + * {

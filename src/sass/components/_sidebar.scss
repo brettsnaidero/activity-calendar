@@ -57,14 +57,31 @@
   }
 }
 
+.sidebar--content {
+  padding: 12px;
+  padding: 0.75rem;
+}
+
 .sidebar--main h1 {
-  background: -webkit-linear-gradient(45deg, #576fe6 0%, #9844b7 50%, #ff357f 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #142252;
 
   font-weight: bold;
   font-size: 32px;
   font-size: 2rem;
+  padding-bottom: 36px;
+  padding-bottom: 2.25rem;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(to right, #576fe6 0%, #9844b7 50%, #ff357f 100%);
+    border-radius: 1px;
+  }
 }
 
 .sidebar--main ul {

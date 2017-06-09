@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import logo from '../img/logo.svg';
 import avatar from '../img/avatar.svg';
 
+import { NavLink } from 'react-router-dom';
 
 export default class Header extends Component {
   constructor(props) {
@@ -49,7 +50,7 @@ export default class Header extends Component {
           <div className="dropdown">
             <ul>
               <li><a href="#" title="">Sign Out</a></li>
-              <li><a href="#" title="">My Events</a></li>
+              <li><NavLink to="/myevents">My Events</NavLink></li>
             </ul>
           </div>
         </div>

@@ -1,9 +1,98 @@
 .map {
-  height: calc(100vh - #{$header-height} - 40px);
+  height: calc(100vh - #{$header-height} - 64px);
 }
 
+/* Map Header */
+.map--header {
+  color: #FFF;
+  height: 32px;
+  height: 2rem;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+
+  @supports(display: flex) {
+    display: flex;
+    justify-content: center;
+  }
+
+  .breadcrumbs {
+    font-size: 18px;
+    font-size: 1.125rem;
+
+    @supports(display: flex) {
+      flex: 1 0 auto;
+    }
+  }
+
+  .day {
+    font-weight: bold;
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 32px;
+    line-height: 2rem;
+    text-align: center;
+
+    @supports(display: flex) {
+      flex: 1 0 auto;
+    }
+  }
+
+  .controls {
+    text-align: right;
+
+    @supports(display: flex) {
+      flex: 1 0 auto;
+    }
+  }
+
+  button {
+    color: #FFF;
+    display: inline-block;
+    margin: 0;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+    vertical-align: middle;
+    background: rgba(71, 128, 168, 0.1);
+    border: none;
+    background-image: none;
+    padding: 8px 16px;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    line-height: normal;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 14px;
+    font-size: 0.875rem;
+    outline: none;
+
+    &.hover,
+    &.active {
+      background: $wspt-colour6;
+    }
+  }
+
+  button:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  button:last-child {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+  }
+
+  button + button {
+    margin-left: 1px;
+  }
+}
+
+/* */
 .map-area {
-  height: calc(100vh - #{$header-height} - 40px);
+  background-color: #FFF;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(13, 23, 57, 0.35);
+  overflow: hidden;
 
   @supports (display: flex) {
     display: flex;
@@ -14,21 +103,22 @@
 
 .map-area svg {
   display: block;
-  height: calc(100vh - #{$header-height} - 40px);
+  height: calc(100vh - #{$header-height} - 64px - 52px);
   width: 100%;
 }
 
 .svg--area {
-  fill: $wspt-colour9;
-  stroke: desaturate(lighten($wspt-colour9,60%),10%);
-  stroke-width: 2px;
+  fill: #94e392;
   stroke-linecap: round;
   cursor: pointer;
+  stroke: #365b2f;
+  stroke-width: 2px;
+  transition: 0.5s fill ease, 0.5s stroke ease;
 }
 
 .map-area svg g:hover .svg--area {
-  stroke: #FFFFFF;
-  stroke-width: 3px;
+  fill: $wspt-colour9;
+  stroke: darken($wspt-colour9, 50%);
 }
 
 .map-area text {
@@ -43,7 +133,8 @@
 }
 
 .svg--shadow {
-  fill: rgba(#000,0.5);
+  opacity: 0;
+  fill: rgba(#000, 0.5);
   filter: url(#glow);
 }
 
@@ -51,37 +142,6 @@
 $timing: 0.1s;
 .map-area svg g {
   animation: fadeAreaIn 1s backwards ease;
-
-  &:nth-child(2) {
-    animation-delay: 1 * $timing;
-  }
-  &:nth-child(3) {
-    animation-delay: 2 * $timing;
-  }
-  &:nth-child(4) {
-    animation-delay: 3 * $timing;
-  }
-  &:nth-child(5) {
-    animation-delay: 4 * $timing;
-  }
-  &:nth-child(6) {
-    animation-delay: 5 * $timing;
-  }
-  &:nth-child(7) {
-    animation-delay: 6 * $timing;
-  }
-  &:nth-child(8) {
-    animation-delay: 7 * $timing;
-  }
-  &:nth-child(9) {
-    animation-delay: 8 * $timing;
-  }
-  &:nth-child(10) {
-    animation-delay: 9 * $timing;
-  }
-  &:nth-child(11) {
-    animation-delay: 10 * $timing;
-  }
 }
 
 @keyframes fadeAreaIn {

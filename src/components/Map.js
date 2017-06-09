@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 
 import { Switch, Route } from 'react-router';
 
-// import {Motion, spring} from 'react-motion';
-
-import surroundings from '../img/surroundings.svg';
-
 import MapArea from './MapComponents/MapArea';
 import MapData from '../data/mapData.json';
 
-export default class Map extends Component {
+// Redux
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { exampleAction } from '../actions/index';
+
+class Map extends Component {
   constructor(props) {
     super(props);
 
@@ -21,12 +22,26 @@ export default class Map extends Component {
     }
   }
 
+  componentDidMount() {
+    let TodayDate = new Date();
+    let today = TodayDate.getDay();
+    let month = TodayDate.getMonth();
+  }
+
   mapClick(id) {
     let newVal = this.state.currentLevel + 1;
     this.setState({
       currentLevel: newVal,
       areaId: id
     });
+  }
+
+  prevDay() {
+
+  }
+
+  nextDay() {
+
   }
 
   renderMap() {
@@ -67,8 +82,21 @@ export default class Map extends Component {
         {/* Levels */}
         <Switch>
           <Route
-            path="/map/:id">
-            <p>Hey</p>
+            path="/map"
+          >
+            <div className="map--header">
+              <div className="breadcrumbs">
+                Breadcrumbs
+              </div>
+              <div className="day">
+                { this.state.currentDate }
+              </div>
+              <div className="controls">
+                <button onClick={this.prevDay}>Back</button>
+                <button className="active">Today</button>
+                <button onClick={this.nextDay}>Next</button>
+              </div>
+            </div>
           </Route>
         </Switch>
 
@@ -100,3 +128,17 @@ export default class Map extends Component {
     );
   }
 };
+
+function mapStateToProps(state) {
+  return {
+	  // mapCurrentLevel: state.currentLevel
+  }
+}
+
+function matchDispatchToProps(dispatch) {
+  return bindActionCreators({
+    exampleAction: exampleAction
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(Map);

@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 export default class Map extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.path.addEventListener('click',
       () => this.props.mapClick(this.props.id)
