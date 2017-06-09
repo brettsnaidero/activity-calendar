@@ -28,11 +28,12 @@ class Map extends Component {
     let month = TodayDate.getMonth();
   }
 
-  mapClick(id) {
-    let newVal = this.state.currentLevel + 1;
+  mapClick(num) {
+    console.log("Clicked!", num);
+    let newLevel = this.state.currentLevel + 1;
     this.setState({
-      currentLevel: newVal,
-      areaId: id
+      currentLevel: newLevel,
+      areaId: num
     });
   }
 
@@ -47,8 +48,8 @@ class Map extends Component {
   renderMap() {
     let ans;
     if (this.state.currentLevel !== 1) {
-      // Map Areas
-      ans = MapData.precincts.map( (item, num) => {
+      // Localities
+      ans = MapData.precincts[this.state.areaId].localities.map( (item, num) => {
         return (
           <MapArea
             key={num}
@@ -56,11 +57,13 @@ class Map extends Component {
             points={item.points}
             title={item.title}
             mapClick={this.mapClick}
+            num={num}
           />
         )
       })
     } else {
       ans = MapData.precincts.map( (item, num) => {
+        // Precincts
         return (
           <MapArea
             key={num}
@@ -68,6 +71,7 @@ class Map extends Component {
             points={item.points}
             title={item.title}
             mapClick={this.mapClick}
+            num={num}
           />
         )
       })

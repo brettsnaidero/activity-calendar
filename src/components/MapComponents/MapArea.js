@@ -4,13 +4,13 @@ import propTypes from 'prop-types';
 export default class Map extends Component {
   componentDidMount() {
     this.path.addEventListener('click',
-      () => this.props.mapClick(this.props.id)
+      () => this.props.mapClick(this.props.num)
     );
   }
 
   componentWillUnmount(){
     this.path.removeEventListener('click',
-      () => this.props.mapClick(this.props.id)
+      () => this.props.mapClick(this.props.num)
     );
   }
 
