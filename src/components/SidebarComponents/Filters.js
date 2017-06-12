@@ -3,25 +3,79 @@ import React, { Component } from 'react';
 import eventTypes from '../../data/eventTypes';
 import MapData from '../../data/mapData.json';
 
+import Checkbox from '../HelperElements/Checkbox';
+
 import _ from 'lodash';
 
 export default class Filters extends Component {
   constructor(props) {
     super(props);
 
+    this.toggleAllEvents = this.toggleAllEvents.bind(this);
+    this.toggleEventCheckbox = this.toggleEventCheckbox.bind(this);
+    this.toggleAllLocations = this.toggleAllLocations.bind(this);
+    this.toggleLocationCheckbox = this.toggleLocationCheckbox.bind(this);
+
     this.state = {
+      allEvents: true,
+      allLocations: true,
+      selectedEventCheckboxes: new Set(),
+      selectedLocationCheckboxes: new Set()
     }
   }
 
-  toggleEvent() {
+  toggleAllEvents() {
+    // If filters active
+    if ( this.state.allEvents ) {
+      this.setState({
+        allEvents: false
+      });
+    } else {
+      // Else turn off all the filters
+      eventTypes.map( (item) => {
+        if (this.refs[`event-${item.id}`].state.isChecked === true) {
+          this.refs[`event-${item.id}`].toggleCheckboxChange();
+        }
+      })
+      // And set 'all' to true
+      this.setState({
+        allEvents: true
+      });
+    }
 
+    // Update filters
+    this.props.updateFilters();
+  }
+
+  toggleEventCheckbox(label) {
+    if (this.state.selectedEventCheckboxes.has(label)) {
+      this.state.selectedEventCheckboxes.delete(label);
+    } else {
+      this.state.selectedEventCheckboxes.add(label);
+    }
+
+    // Turn off 'all' if it is active
+    this.setState({
+      allEvents: false
+    });
+
+    // Update filters
+    this.props.updateFilters(this.state.selectedLocationCheckboxes, this.state.selectedEventCheckboxes);
   }
 
   eventTypeFilters() {
     return (
       <ul className="optionset checkboxset">
         <li>
-          <input id="allEventTypes" className="checkbox" name="allEventTypes" type="checkbox" value="allEventTypes" checked="true" />
+          <input
+            id="allEventTypes"
+            className="checkbox"
+            name="allEventTypes"
+            type="checkbox"
+            value="allEventTypes"
+            checked={this.state.allEvents}
+            onChange={this.toggleAllEvents}
+          />
           <label htmlFor="allEventTypes">
             <svg viewBox="0 0 10 10">
               <polyline points="1.5,5 4.25,7.75 8.5,1.75"></polyline>
@@ -32,13 +86,13 @@ export default class Filters extends Component {
         { eventTypes.map( (item, index) => {
           return (
             <li key={index}>
-              <input id={item.id} className="checkbox" name={item.id} type="checkbox" value={item.id} />
-              <label htmlFor={item.id}>
-                <svg viewBox="0 0 10 10">
-                  <polyline points="1.5,5 4.25,7.75 8.5,1.75"></polyline>
-                </svg>
-                {item.name}
-              </label>
+              <Checkbox
+                handleCheckboxChange={this.toggleCheckbox}
+                id={item.id}
+                name={item.name}
+                handleCheckboxChange={this.toggleEventCheckbox}
+                ref={`event-${item.id}`}
+              />
             </li>
           )
         })}
@@ -46,15 +100,65 @@ export default class Filters extends Component {
     )
   }
 
-  toggleLocation() {
+  toggleAllLocations() {
+    // If filters active
+    if ( this.state.allLocations ) {
+      this.setState({
+        allLocations: false
+      });
+    } else {
+      // Else turn off all the filters
+      MapData.precincts.map( (item) => {
+        if (this.refs[`location-${item.id}`].state.isChecked === true) {
+          this.refs[`location-${item.id}`].toggleCheckboxChange();
+          if (item.localities) {
+            _.map(item.localities, (childItem) => {
+              if (this.refs[`location-${childItem.id}`].state.isChecked === true) {
+                this.refs[`location-${childItem.id}`].toggleCheckboxChange();
+              }
+            })
+          }
+        }
+      })
+      // And set 'all' to true
+      this.setState({
+        allLocations: true
+      });
+    }
 
+    // Update filters
+    this.props.updateFilters();
+  }
+
+  toggleLocationCheckbox(label) {
+    if (this.state.selectedLocationCheckboxes.has(label)) {
+      this.state.selectedLocationCheckboxes.delete(label);
+    } else {
+      this.state.selectedLocationCheckboxes.add(label);
+    }
+
+    // Turn off 'all' if it is active
+    this.setState({
+      allLocations: false
+    });
+
+    // Update filters
+    this.props.updateFilters(this.state.selectedLocationCheckboxes, this.state.selectedEventCheckboxes);
   }
 
   locationFilters() {
     return (
       <ul className="optionset checkboxset">
         <li>
-          <input id="allLocations" className="checkbox" name="allLocations" type="checkbox" value="allLocations" checked="true" />
+          <input
+            id="allLocations"
+            className="checkbox"
+            name="allLocations"
+            type="checkbox"
+            value="allLocations"
+            checked={this.state.allLocations}
+            onChange={this.toggleAllLocations}
+          />
           <label htmlFor="allLocations">
             <svg viewBox="0 0 10 10">
               <polyline points="1.5,5 4.25,7.75 8.5,1.75"></polyline>
@@ -72,13 +176,13 @@ export default class Filters extends Component {
                 { _.map(item.localities, (childItem, i) => {
                   return (
                     <li key={i}>
-                      <input id={item.id + ' ' + childItem.id} className="checkbox" name={item.id + ' ' + childItem.id} type="checkbox" value={item.id + ' ' + childItem.id} />
-                      <label htmlFor={item.id + ' ' + childItem.id}>
-                        <svg viewBox="0 0 10 10">
-                          <polyline points="1.5,5 4.25,7.75 8.5,1.75"></polyline>
-                        </svg>
-                        {childItem.title} <span>0</span>
-                      </label>
+                      <Checkbox
+                        handleCheckboxChange={this.toggleCheckbox}
+                        id={childItem.id}
+                        name={childItem.title}
+                        handleCheckboxChange={this.toggleLocationCheckbox}
+                        ref={`location-${childItem.id}`}
+                      />
                     </li>
                   )
                 }) }
@@ -88,13 +192,13 @@ export default class Filters extends Component {
           //
           return (
             <li className="odd valoption1" key={num}>
-              <input id={item.id} className="checkbox" name={item.id} type="checkbox" value={item.id} />
-              <label htmlFor={item.id}>
-                <svg viewBox="0 0 10 10">
-                  <polyline points="1.5,5 4.25,7.75 8.5,1.75"></polyline>
-                </svg>
-                { item.title }
-              </label>
+              <Checkbox
+                handleCheckboxChange={this.toggleCheckbox}
+                id={item.id}
+                name={item.title}
+                handleCheckboxChange={this.toggleLocationCheckbox}
+                ref={`location-${item.id}`}
+              />
               { babies }
             </li>
           )
@@ -103,8 +207,6 @@ export default class Filters extends Component {
       </ul>
     )
   }
-
-
 
   render() {
     return (

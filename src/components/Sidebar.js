@@ -73,15 +73,21 @@ export default class Sidebar extends Component {
                 />
                 <Route
                   path="/"
-                  component={Filters}
+                  render={() => (
+                    <Filters updateFilters={this.props.updateFilters} />
+                  )}
                 />
               </Switch>
             </CSSTransitionGroup>
           </div>
           {/* Bottom */}
           <div className="sidebar--area sidebar--bottom">
-            <NavLink to="/calendar" className="button button--toggle first">Calendar</NavLink>
-            <NavLink to="/map" className="button button--toggle second">Map</NavLink>
+            <NavLink to="/calendar" className="button button--toggle first">
+              Calendar
+            </NavLink>
+            <NavLink to="/map" className="button button--toggle second">
+              Map
+            </NavLink>
           </div>
         </div>
       )}/>

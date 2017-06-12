@@ -33,9 +33,13 @@ class App extends Component {
     super(props);
 
     this.toggleOffCanvas = this.toggleOffCanvas.bind(this);
+    this.updateFilters = this.updateFilters.bind(this);
 
     this.state = {
-      offCanvasMenuShow: false
+      offCanvasMenuShow: false,
+
+      eventFilters: {},
+      locationFilters: {}
     }
   }
 
@@ -44,6 +48,13 @@ class App extends Component {
     this.setState({
       offCanvasMenuShow: newStatus
     });
+  }
+
+  updateFilters(locations, events) {
+    this.setState({
+      locationFilters: locations,
+      eventFilters: events
+    })
   }
 
   render() {
@@ -66,7 +77,9 @@ class App extends Component {
               />
 
               {/* Left Sidebar Area */}
-              <Sidebar />
+              <Sidebar
+                updateFilters={this.updateFilters}
+              />
 
               {/* Main Content Area */}
               <div className="main">
@@ -96,7 +109,13 @@ class App extends Component {
                       />
                       <Route
                         path="/calendar"
-                        component={Calendar}
+                        render={({history}) =>
+                          <Calendar
+                            history={history}
+                            eventFilters={this.state.eventFilters}
+                            locationFilters={this.state.locationFilters}
+                          />
+                        }
                       />
                       <Route
                         path="/"

@@ -323,6 +323,7 @@ button.rbc-input::-moz-focus-inner {
   position: absolute;
   z-index: 5;
   background-color: #142252;
+  color: #FFF;
   border: 1px solid #e5e5e5;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
   padding: 10px; }
@@ -1296,6 +1297,11 @@ ul.sub {
   padding-left: 20px;
   padding-left: 1.25rem;
   display: none; }
+  ul.sub.active {
+    display: block; }
+  ul.sub li label {
+    font-size: 12px;
+    font-size: 0.75rem; }
 
 /* Tick or Marker */
 input[type="checkbox"] + label svg,

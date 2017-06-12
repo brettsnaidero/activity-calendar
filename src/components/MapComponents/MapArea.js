@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default class Map extends Component {
   componentDidMount() {
@@ -43,7 +43,7 @@ export default class Map extends Component {
 };
 
 Map.propTypes = {
-  title: React.PropTypes.string,
+  title: PropTypes.string,
 
-  points: React.PropTypes.string.isRequired
+  points: PropTypes.string.isRequired
 }
