@@ -1,0 +1,53 @@
+.details:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.details hr {
+  border: none;
+  border-top: 1px solid #ececec;
+  float: left;
+  width: 100%;
+  margin: 12px 0px;
+  margin: 0.75rem 0rem; 
+}
+
+.details--field {
+  float: left;
+  width: 100%;
+  margin: 12px 0px;
+  margin: 0.75rem 0rem;
+
+  &.half {
+      width: 48.5%;
+      margin-right: 3%;
+
+      &.last {
+          margin-right: 0;
+      }
+  }
+
+  &.third {
+      width: 31.333333%;
+      margin-right: 3%;
+
+      &.last {
+          margin-right: 0;
+      }
+  }
+}
+
+.details--label {
+
+}
+
+.details--answer {
+ padding: 10px;
+ padding: 0.75rem;
+ background-color: #EFEFEF;
+ border-radius: 3px;
+
+ margin: 8px 0 0 0;
+ margin: 0.5rem 0 0 0;
+}

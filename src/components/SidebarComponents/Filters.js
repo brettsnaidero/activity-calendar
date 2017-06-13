@@ -44,7 +44,7 @@ export default class Filters extends Component {
     }
 
     // Update filters
-    this.props.updateFilters();
+    this.props.updateFilters(this.state.selectedLocationCheckboxes, this.state.selectedEventCheckboxes);
   }
 
   toggleEventCheckbox(label) {
@@ -127,7 +127,7 @@ export default class Filters extends Component {
     }
 
     // Update filters
-    this.props.updateFilters();
+    this.props.updateFilters(this.state.selectedLocationCheckboxes, this.state.selectedEventCheckboxes);
   }
 
   toggleLocationCheckbox(label) {
@@ -169,10 +169,16 @@ export default class Filters extends Component {
 
         { _.map(MapData.precincts, (item, num) => {
           // Localities
-          let babies;
+          let localities;
           if (item.localities) {
-            babies = (
-              <ul className="sub">
+            // If precinct is ticked, add class to show children
+            let activeClass = false;
+            if( this.state.selectedLocationCheckboxes.has(item.id) ) {
+              activeClass = true
+            }
+
+            localities = (
+              <ul className={activeClass ? "sub active" : "sub"}>
                 { _.map(item.localities, (childItem, i) => {
                   return (
                     <li key={i}>
@@ -199,7 +205,7 @@ export default class Filters extends Component {
                 handleCheckboxChange={this.toggleLocationCheckbox}
                 ref={`location-${item.id}`}
               />
-              { babies }
+              { localities }
             </li>
           )
         }) }

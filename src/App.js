@@ -38,8 +38,8 @@ class App extends Component {
     this.state = {
       offCanvasMenuShow: false,
 
-      eventFilters: {},
-      locationFilters: {}
+      eventFilters: new Set(),
+      locationFilters: new Set()
     }
   }
 
@@ -109,18 +109,28 @@ class App extends Component {
                       />
                       <Route
                         path="/calendar"
-                        render={({history}) =>
-                          <Calendar
-                            history={history}
-                            eventFilters={this.state.eventFilters}
-                            locationFilters={this.state.locationFilters}
-                          />
-                        }
+                        render={({history}) => {
+                          return (
+                            <Calendar
+                              history={history}
+                              eventFilters={this.state.eventFilters}
+                              locationFilters={this.state.locationFilters}
+                            />
+                          )
+                        }}
                       />
                       <Route
-                        path="/"
                         exact
-                        component={Calendar}
+                        path="/"
+                        render={({history}) => {
+                          return (
+                            <Calendar
+                              history={history}
+                              eventFilters={this.state.eventFilters}
+                              locationFilters={this.state.locationFilters}
+                            />
+                          )
+                        }}
                       />
                       <Route
                         path="*"

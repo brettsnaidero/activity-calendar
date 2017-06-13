@@ -25,28 +25,27 @@ export default class Calendar extends Component {
   }
 
   filterEvents(nextProps) {
-    let filteredEvents = [];
+    let filteredEvents = this.state.events;
 
     // Event Type Filters
     if(nextProps.eventFilters.size > 0) {
-      filteredEvents = this.state.events.reduce( (event) => {
+      filteredEvents = filteredEvents.filter( (event) => {
         for (let item of nextProps.eventFilters) {
-          console.log(event);
-          return event;
-          // if (event.class === item) {
-          //   return event;
-          // }
+          if (event.class === item) {
+            return event;
+          }
         }
       });
     }
-    console.log(filteredEvents);
+
     // Location Filters
     if(nextProps.locationFilters.size > 0) {
-      filteredEvents = filteredEvents.map( (event) => {
+      filteredEvents = filteredEvents.filter( (event) => {
         for (let item of nextProps.locationFilters) {
-          // if (event.location.locality === item) { // Need to work out a solution for subs!
-          //   return event;
-          // }
+          if (event.location.precinct === item) {
+            // Need to work out a solution for subs!
+            return event;
+          }
         }
       });
     }
@@ -57,6 +56,7 @@ export default class Calendar extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log("New props", nextProps);
     this.filterEvents(nextProps);
   }
 
@@ -108,3 +108,7 @@ export default class Calendar extends Component {
     );
   }
 };
+
+// Calendar.propTypes = {
+//
+// }
